@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ee9329cc7575c42988209183d4ae64, type: 3}
+  m_Name: RadishCrop
+  m_EditorClassIdentifier: 
+  timeToGrow: 2
+  yield: {fileID: 11400000, guid: 5c10a7f0dcaf36844ad4874e5315f024, type: 2}
+  count: 1
+  sprites:
+  - {fileID: 383118127, guid: dd3217a7e272d8f41b831b6a8a5d711a, type: 3}
+  - {fileID: 920774770, guid: dd3217a7e272d8f41b831b6a8a5d711a, type: 3}
+  growthStageTime: 0100000002000000
+  MaxWater: 1
+  CurrWater: 0
+  fullWater: 0
+  daysWithOutWater: 0

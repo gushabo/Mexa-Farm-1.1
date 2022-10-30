@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8261890751870117927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8261890751870117925}
+  - component: {fileID: 8261890751870117926}
+  - component: {fileID: 1284127303266079480}
+  - component: {fileID: 1284127303266079431}
+  - component: {fileID: 1284127303266079430}
+  - component: {fileID: 1284127303266079427}
+  - component: {fileID: 1284127303266079424}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8261890751870117925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261890751870117927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.224897, y: -0.07365485, z: 0.41234833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8261890751870117926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261890751870117927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f0dd7e6c2e44e4a90f73fdc95dfaf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  InventoryContainer: {fileID: 11400000, guid: 475f09c77f9c43b44872262357191e06, type: 2}
+  dragNDropController: {fileID: 1284127303266079431}
+  timeController: {fileID: 1284127303266079480}
+  dialogueSystem: {fileID: 0}
+--- !u!114 &1284127303266079480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261890751870117927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d762759c1048a43bcb7334efa9b74e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NightLightColor: {r: 0.14470658, g: 0.13407795, b: 0.21698111, a: 1}
+  NightTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.000018053308
+      outSlope: -0.000018053308
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 3.0176544
+      value: 0.9999455
+      inSlope: 0.00018048708
+      outSlope: 0.00018048708
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2621018
+      outWeight: 0.053020272
+    - serializedVersion: 3
+      time: 5.458676
+      value: 0
+      inSlope: 0.00014132877
+      outSlope: 0.00014132877
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 18.385008
+      value: 0
+      inSlope: 0.0002817221
+      outSlope: 0.0002817221
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.311413
+    - serializedVersion: 3
+      time: 21
+      value: 0.999806
+      inSlope: -0.00026346752
+      outSlope: -0.00026346752
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.29462877
+    - serializedVersion: 3
+      time: 24
+      value: 1
+      inSlope: 0.00006467104
+      outSlope: 0.00006467104
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  DayLightColor: {r: 1, g: 1, b: 1, a: 1}
+  text: {fileID: 0}
+  timeScale: 300
+  startAtTime: 28800
+  globalLight: {fileID: 0}
+--- !u!114 &1284127303266079431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261890751870117927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bcb27e2125275449bfab9e0a62609a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlot:
+    item: {fileID: 0}
+    count: 0
+  ItemIcon: {fileID: 0}
+--- !u!114 &1284127303266079430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261890751870117927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f6f4708d2fcde4ea73ec543925bba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpItemPrefab: {fileID: 2773648605510917649, guid: 02ef44dbd7f14ea4f9166e9c9f1527ec, type: 3}
+--- !u!114 &1284127303266079427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261890751870117927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f86eaad8e1a474dbc76741b1aab078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  cropsManager: {fileID: 1284127303266079424}
+--- !u!114 &1284127303266079424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261890751870117927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3089b749873990841872c5b37edf03d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropsManager: {fileID: 0}

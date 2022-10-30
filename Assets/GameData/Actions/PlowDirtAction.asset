@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf949dcd764354468dc4ab6807eaac1, type: 3}
+  m_Name: PlowDirtAction
+  m_EditorClassIdentifier: 
+  energyCost: 1
+  CanPlow:
+  - {fileID: 11400000, guid: f0cd3d4864338284aac4e2fc49f5daf2, type: 2}
+  - {fileID: 11400000, guid: f474a840766ce674a9ef76d334fda2c0, type: 2}
+  - {fileID: 11400000, guid: 66e6b2f1828f6844f9a9cd5368b8b0c4, type: 2}
+  - {fileID: 11400000, guid: 825ab2578e7f99745b39cda6f4091fc7, type: 2}
+  - {fileID: 11400000, guid: 6032902d76c0fdc49a658df0f286c2f6, type: 2}
+  onPlowUsed: {fileID: 0}

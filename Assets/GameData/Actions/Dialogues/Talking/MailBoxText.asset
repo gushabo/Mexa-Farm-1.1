@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab87a42d490ac2242b58c2626a643bc3, type: 3}
+  m_Name: MailBoxText
+  m_EditorClassIdentifier: 
+  line:
+  - Buenos dias joven, me llamo Rafa pero todos me dicen Don Rafa
+  - "al lado mio como puedes ver se encuentra un buz\xF3n "
+  - en este buzon se coloca la cuota para pagarme a mi :D
+  - te estoy rentando este gran terreno que hace tiempo que no uso por eso puedes
+    ver que esta un poco descuidado
+  - tu trabajo sera expandirlo y vivir a base de lo que plantes y puedan otorgarte
+    los animales si es que llegas a tener algunos
+  - "te podras encontrar mas gente en el pueblo asi como a mi amigo Juan es un se\xF1or
+    con una gran barba, el vende las semillas de los cultivos y compra lo ya crecido"
+  - de hecho es el que esta aqui a mi lado habla con el para que tambien puedas ver
+    que te dice
+  - y por favor recuerda pagarme cada 5 dias si es que no lo haces al sexto te cobrare
+    el doble y si llegas a deberme por mas de 10 dias te expulsare de mi terreno
+  actor: {fileID: 11400000, guid: 2cc440e7d82b78d42ad4e9ffb9727588, type: 2}

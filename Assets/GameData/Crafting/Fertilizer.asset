@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f743c2cb257b84284694c069b23193, type: 3}
+  m_Name: Fertilizer
+  m_EditorClassIdentifier: 
+  elements:
+  - item: {fileID: 11400000, guid: 5c10a7f0dcaf36844ad4874e5315f024, type: 2}
+    count: 2
+  - item: {fileID: 11400000, guid: ccbffdad8753b5640aa93b42ac23eb1c, type: 2}
+    count: 3
+  - item: {fileID: 11400000, guid: 86b247ef273143240b7140c81a1dc7d0, type: 2}
+    count: 1
+  output:
+    item: {fileID: 11400000, guid: 01cbf7f16e3d2fc4f8c6e4e9870cca50, type: 2}
+    count: 1

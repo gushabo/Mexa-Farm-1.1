@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ee9329cc7575c42988209183d4ae64, type: 3}
+  m_Name: StrawberryCrops
+  m_EditorClassIdentifier: 
+  timeToGrow: 3
+  yield: {fileID: 11400000, guid: 86b247ef273143240b7140c81a1dc7d0, type: 2}
+  count: 1
+  sprites:
+  - {fileID: -478413734, guid: dd3217a7e272d8f41b831b6a8a5d711a, type: 3}
+  - {fileID: -478413734, guid: dd3217a7e272d8f41b831b6a8a5d711a, type: 3}
+  - {fileID: -2140586109, guid: dd3217a7e272d8f41b831b6a8a5d711a, type: 3}
+  growthStageTime: 010000000200000003000000
+  MaxWater: 2
+  daysWithOutWater: 0

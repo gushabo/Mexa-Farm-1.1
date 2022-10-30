@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713ee76b7235b9c48ac81b43e4c4a2ab, type: 3}
+  m_Name: Plow
+  m_EditorClassIdentifier: 
+  Name: Plow
+  id: 3
+  Stackable: 0
+  Icon: {fileID: 21300000, guid: 84ce684f897e1a14dad78819ccda94ea, type: 3}
+  OnAction: {fileID: 0}
+  onTileMapAction: {fileID: 11400000, guid: 9820af72ca417cc41b7a0a3363ffb3bd, type: 2}
+  onItemUsed: {fileID: 0}
+  crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefab: {fileID: 0}

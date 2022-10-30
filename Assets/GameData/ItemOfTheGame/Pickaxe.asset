@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713ee76b7235b9c48ac81b43e4c4a2ab, type: 3}
+  m_Name: Pickaxe
+  m_EditorClassIdentifier: 
+  Name: Pickaxe
+  id: 2
+  Stackable: 0
+  Icon: {fileID: 21300000, guid: 6e28235e1eb2c4a45bd2423a4daacc74, type: 3}
+  OnAction: {fileID: 11400000, guid: b883c6ea5b5555f4d9bced2c16a99124, type: 2}
+  onTileMapAction: {fileID: 0}
+  onItemUsed: {fileID: 0}
+  crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefab: {fileID: 0}
