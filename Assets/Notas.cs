@@ -26,4 +26,6 @@ public class Notas : MonoBehaviour
     i'll cost 100 coins
     */
 
+    //este es el nuevo repositorio y ando viendo que jale jaja salu2
+
 }
