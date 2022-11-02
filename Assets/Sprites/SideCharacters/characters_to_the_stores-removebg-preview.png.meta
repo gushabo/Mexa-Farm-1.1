@@ -145,7 +145,7 @@ TextureImporter:
         width: 137
         height: 169
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,7 +166,7 @@ TextureImporter:
         width: 52
         height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,7 +187,7 @@ TextureImporter:
         width: 137
         height: 169
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,6 +195,48 @@ TextureImporter:
       bones: []
       spriteID: ffc9e5c615a2d3d449aa04dca1695360
       internalID: -1436715956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: child
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 45
+        width: 52
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd12334c31fd26e45b0c96ce0349f76f
+      internalID: 1092095870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChildCabezon
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 0
+        width: 131
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554ad46e5f087ed428a87eac345aad49
+      internalID: 1019193373
       vertices: []
       indices: 
       edges: []
@@ -213,7 +255,9 @@ TextureImporter:
       ElBarbasCabezon: -1436715956
       DonRafaCabezon: -1358980761
       ElBarbas: 483375965
+      child: 1092095870
       Don Rafa: -659951819
+      ChildCabezon: 1019193373
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

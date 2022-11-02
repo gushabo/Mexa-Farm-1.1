@@ -23,14 +23,11 @@ public class TilemapCropsManager : MonoBehaviour
     //the crop whole object
     [SerializeField] GameObject cropsSpritePrefab;
 
-    WeatherManager weather;
-
     private void Start()
     {
 
         GameManager.instance.GetComponent<CropsManager>().cropsManager = this;
         targetTilemap = GetComponent<Tilemap>();
-        weather = GetComponent<WeatherManager>();
         VisualizeMap();
     }
 
@@ -123,6 +120,7 @@ public class TilemapCropsManager : MonoBehaviour
 
         }
         days = DayTimeController.days;
+        
 
     }
 

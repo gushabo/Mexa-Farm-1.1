@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Global Storage Container
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: bca762b769590e24881381d576bc0406, type: 2}
-    count: 1
+  - item: {fileID: 0}
+    count: 0
   - item: {fileID: 0}
     count: 0
   - item: {fileID: 11400000, guid: ddd9357612b6804458e434fae7d7e890, type: 2}
@@ -33,4 +33,4 @@ MonoBehaviour:
     count: 0
   - item: {fileID: 0}
     count: 0
-  isDirty: 0
+  isDirty: 1

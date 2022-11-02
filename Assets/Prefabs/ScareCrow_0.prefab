@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4015302357431495445}
   - component: {fileID: 3031171269572862653}
   - component: {fileID: 5099259458732398651}
+  - component: {fileID: 863419644283520111}
   m_Layer: 0
   m_Name: ScareCrow_0
   m_TagString: Untagged
@@ -98,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013623476, y: 0}
+  m_Offset: {x: 0.0058442354, y: -0.03111732}
   m_SpriteTilingProperty:
     border: {x: 0.03125, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,5 +110,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8434129, y: 1.0908566}
+  m_Size: {x: 0.32997584, y: 0.36270928}
   m_EdgeRadius: 0
+--- !u!114 &863419644283520111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2930531578929675599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4f1b471e9f58544a74755750864c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationary: 1

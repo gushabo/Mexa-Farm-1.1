@@ -24,18 +24,24 @@ public class WeatherManager : MonoBehaviour
     [SerializeField] ParticleSystem SnowObject;
     [SerializeField] ParticleSystem DroughtObject;
 
+    float timer = 1.5f;
+    bool flag = false;
+
     //Rain vars
     //the container when all the crops are
     CropsContainer cropsW;
     //the gameObject that get the crops object
     public GameObject goCrops;
 
+
+
     //Snow vars
     //the gameObject that get the lootContainer 
     public GameObject chestContainer;
     //the container from the silo
     ItemContainer itemContainer;
-    int x = 0;
+    List<int> x = new List<int>();
+    int random;
     Item removeItem;
 
     private void Start()
@@ -54,9 +60,22 @@ public class WeatherManager : MonoBehaviour
         {
             days = DayTimeController.days;
             RandomWeatherChangeCheck();
-            RainHappens();
-            SnowHappens();
+            //flag = true;
         }
+
+        if (flag == true)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                RainHappens();
+                SnowHappens();
+                flag = false;
+                timer = 1.5f;
+            }
+
+        }
+
 
     }
 
@@ -69,13 +88,16 @@ public class WeatherManager : MonoBehaviour
                 for (int i = 0; i < itemContainer.slots.Count; i++)
                 {
                     if (itemContainer.slots[i].item == null) continue;
-                    x++;
+                    if (itemContainer.slots[i].item != null)
+                    {
+                        x.Add(i);
+                    }
+                    if(x.Count == 0){return;}
                 }
-                Debug.Log("x: " + x);
-                Debug.Log("rango random de 0 a x: " + UnityEngine.Random.Range(0, x - 1));
-                removeItem = itemContainer.slots[UnityEngine.Random.Range(0, x - 1)].item;
+                random = UnityEngine.Random.Range(0, x.Count - 1);
+                removeItem = itemContainer.slots[random].item;
                 itemContainer.Remove(removeItem);
-                x--;
+                x.RemoveAt(random);
             }
 
         }
@@ -87,13 +109,11 @@ public class WeatherManager : MonoBehaviour
         {
             foreach (CropTile cropTile in cropsW.crops)
             {
-                //cropTile.CurrWater++;
+                cropTile.CurrWater++;
             }
-            Debug.Log("se rego :D");
 
         }
     }
-
 
     //check is some random value is more than the chance to change
     public void RandomWeatherChangeCheck()
@@ -115,7 +135,6 @@ public class WeatherManager : MonoBehaviour
     {
         //get the new weather in the current state
         currentWeatherState = newWheatherState;
-        Debug.Log(currentWeatherState);
         UpdateWeather();
     }
 

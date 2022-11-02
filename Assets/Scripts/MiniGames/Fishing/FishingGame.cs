@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FishingGame : MonoBehaviour
 {
@@ -35,18 +37,74 @@ public class FishingGame : MonoBehaviour
 
     public bool pause = false;
     [SerializeField] float failTimer = 10;
-    
 
-    private void Start() {
+
+    //for the text
+    [SerializeField] GameObject panel;
+    [SerializeField] GameObject text_;
+    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] GameObject winPanel;
+    [SerializeField] TextMeshProUGUI wintext;
+    float timer = 4f;
+    int ti;
+
+    bool firstTime = true;
+    bool end = false;
+
+    float endTimer = 1.5f;
+
+    //Change scenes
+    [SerializeField] string FarmSceneName;
+    [SerializeField] string EssentialSceneName;
+
+    private void Start()
+    {
+        pause = true;
         hookProgress = 0.2f;
     }
 
     private void Update()
     {
-        if(pause){return;}
+        if (firstTime)
+        {
+            InitGame();
+        }
+        if (end == true)
+        {
+            endTimer -= Time.deltaTime;
+            Debug.Log(endTimer);
+            if (endTimer <= 0)
+            {
+                Debug.Log("cambio de escenas");
+                ChangeScene();
+            }
+        }
+        if (pause) { return; }
+        firstTime = false;
         MoveFish();
         MoveHook();
         CheckProgress();
+
+    }
+
+    private void InitGame()
+    {
+        if (pause)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                timer = 0;
+                pause = false;
+                panel.SetActive(false);
+                text_.SetActive(false);
+            }
+            ti = Mathf.FloorToInt(timer);
+            text.text = ti.ToString();
+
+        }
+
+
     }
 
     private void CheckProgress()
@@ -74,7 +132,7 @@ public class FishingGame : MonoBehaviour
             hookProgress -= progressBarDecay * Time.deltaTime;
             failTimer -= Time.deltaTime;
             if (failTimer < 0f)
-            {   
+            {
                 //lose the game
                 Lost();
                 Debug.Log("U lose");
@@ -86,12 +144,27 @@ public class FishingGame : MonoBehaviour
 
     private void Win()
     {
-        pause = true;    
+        pause = true;
+        wintext.text = "U WIN!!!";
+        winPanel.SetActive(true);
+        panel.SetActive(true);
+        end = true;
+
+    }
+
+    private void ChangeScene()
+    {
+        SceneManager.LoadScene(FarmSceneName, LoadSceneMode.Single);
+        SceneManager.LoadScene(EssentialSceneName, LoadSceneMode.Additive);
     }
 
     private void Lost()
     {
-        pause = true;        
+        pause = true;
+        wintext.text = "U LOSE :c";
+        winPanel.SetActive(true);
+        panel.SetActive(true);
+        end = true;
     }
 
     private void MoveHook()
