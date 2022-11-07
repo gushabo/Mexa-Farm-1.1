@@ -14,11 +14,16 @@ public class FishGamePart1 : MonoBehaviour
     public GameObject go;
     public GameObject child;
 
+    public GameObject grandson;
+
     // Start is called before the first frame update
     void Start()
     {
         go = transform.GetChild(0).gameObject;
         go.SetActive(false);
+
+        grandson = go.transform.GetChild(0).gameObject;
+
         child = transform.GetChild(1).gameObject;
         child.SetActive(false);
     }

@@ -24117,6 +24117,19 @@ MonoBehaviour:
   text: {fileID: 69103026}
   noMoney: {fileID: 142168970}
   gameOverPanel: {fileID: 876413309}
+--- !u!114 &1144945428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144945362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3ec41e0f1e90d40b23be13f3d191cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1642190938}
 --- !u!114 &1158473892 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1284127303266079427, guid: ee2533d1eaba95446a996e57c4ea5d0d, type: 3}
@@ -27371,7 +27384,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9, y: 1}
+    m_SensorSize: {x: 1.9017241, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

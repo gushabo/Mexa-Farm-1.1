@@ -3796,10 +3796,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907416357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1483746145}
   m_Father: {fileID: 1660487109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3893,7 +3894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a4b73c2ded96047b1955808a4c3697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishingSceneName: FishingGame
+  go: {fileID: 1483746144}
 --- !u!1 &914572588
 GameObject:
   m_ObjectHideFlags: 0
@@ -7297,7 +7298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277639053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.15}
+  m_LocalPosition: {x: 0, y: 0, z: 0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8537,6 +8538,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.558198, y: 6.8054686}
   m_EdgeRadius: 0
+--- !u!1 &1483746144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5530050283895104252, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+  m_PrefabInstance: {fileID: 3661302516738746669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1483746145 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+  m_PrefabInstance: {fileID: 3661302516738746669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1484379389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10409,7 +10420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097166944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.14}
+  m_LocalPosition: {x: 0, y: 0, z: 0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18444,7 +18455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
       propertyPath: objectSpawnLimit
-      value: 5
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
       propertyPath: spawn.Array.size
@@ -18468,3 +18479,84 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
+--- !u!1001 &3661302516738746669
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 907416358}
+    m_Modifications:
+    - target: {fileID: 5530050283895104252, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_Name
+      value: FishingMiniGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104252, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104254, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050284736641075, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.326
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050284759034412, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050285015619697, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050285798565928, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.126
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050285844073019, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.441
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6f97c9786381844e8f05351e61afea0, type: 3}

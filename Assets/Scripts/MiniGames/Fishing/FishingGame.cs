@@ -40,45 +40,46 @@ public class FishingGame : MonoBehaviour
 
 
     //for the text
-    [SerializeField] GameObject panel;
-    [SerializeField] GameObject text_;
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] GameObject winPanel;
-    [SerializeField] TextMeshProUGUI wintext;
-    float timer = 4f;
-    int ti;
+    // [SerializeField] GameObject panel;
+    // [SerializeField] GameObject text_;
+    // [SerializeField] TextMeshProUGUI text;
+    // [SerializeField] GameObject winPanel;
+    // [SerializeField] TextMeshProUGUI wintext;
+    // float timer = 4f;
+    // int ti;
 
     bool firstTime = true;
     bool end = false;
 
     float endTimer = 1.5f;
 
-    //Change scenes
-    [SerializeField] string FarmSceneName;
-    [SerializeField] string EssentialSceneName;
+    //Reward of the player
+    Currency money;
+
 
     private void Start()
     {
-        pause = true;
+        //pause = true;
         hookProgress = 0.2f;
+        
     }
 
     private void Update()
     {
-        if (firstTime)
-        {
-            InitGame();
-        }
-        if (end == true)
-        {
-            endTimer -= Time.deltaTime;
-            Debug.Log(endTimer);
-            if (endTimer <= 0)
-            {
-                Debug.Log("cambio de escenas");
-                ChangeScene();
-            }
-        }
+        // if (firstTime)
+        // {
+        //     InitGame();
+        // }
+        // if (end == true)
+        // {
+        //     endTimer -= Time.deltaTime;
+        //     Debug.Log(endTimer);
+        //     if (endTimer <= 0)
+        //     {
+        //         Debug.Log("cambio de escenas");
+
+        //     }
+        // }
         if (pause) { return; }
         firstTime = false;
         MoveFish();
@@ -89,20 +90,20 @@ public class FishingGame : MonoBehaviour
 
     private void InitGame()
     {
-        if (pause)
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                timer = 0;
-                pause = false;
-                panel.SetActive(false);
-                text_.SetActive(false);
-            }
-            ti = Mathf.FloorToInt(timer);
-            text.text = ti.ToString();
+        // if (pause)
+        // {
+        //     timer -= Time.deltaTime;
+        //     if (timer <= 0)
+        //     {
+        //         timer = 0;
+        //         pause = false;
+        //         panel.SetActive(false);
+        //         text_.SetActive(false);
+        //     }
+        //     ti = Mathf.FloorToInt(timer);
+        //     text.text = ti.ToString();
 
-        }
+        // }
 
 
     }
@@ -145,25 +146,19 @@ public class FishingGame : MonoBehaviour
     private void Win()
     {
         pause = true;
-        wintext.text = "U WIN!!!";
-        winPanel.SetActive(true);
-        panel.SetActive(true);
+        //wintext.text = "U WIN!!!";
+        //winPanel.SetActive(true);
+        //panel.SetActive(true);
         end = true;
 
-    }
-
-    private void ChangeScene()
-    {
-        SceneManager.LoadScene(FarmSceneName, LoadSceneMode.Single);
-        SceneManager.LoadScene(EssentialSceneName, LoadSceneMode.Additive);
     }
 
     private void Lost()
     {
         pause = true;
-        wintext.text = "U LOSE :c";
-        winPanel.SetActive(true);
-        panel.SetActive(true);
+        //wintext.text = "U LOSE :c";
+        //winPanel.SetActive(true);
+        //panel.SetActive(true);
         end = true;
     }
 

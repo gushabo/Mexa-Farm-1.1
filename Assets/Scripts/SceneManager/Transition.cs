@@ -52,16 +52,4 @@ public class Transition : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos() {
-        if(transitionType == TransitionType.Scene)
-        {
-            //Handles.Label(transform.position, "to " + sceneNameToTransition);
-        }
-        if(transitionType == TransitionType.Warp)
-        {
-            //Gizmos.DrawLine(transform.position, destination.position);
-        }
-
-    }
-
 }
