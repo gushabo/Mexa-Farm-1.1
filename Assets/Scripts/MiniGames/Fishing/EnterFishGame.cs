@@ -11,6 +11,7 @@ public class EnterFishGame : Interactable
         FishGameCharacter fishGame = character.GetComponent<FishGameCharacter>();
         if(fishGame == null) {return;}
         fishGame.StartGame();
+        
     }
 
 }

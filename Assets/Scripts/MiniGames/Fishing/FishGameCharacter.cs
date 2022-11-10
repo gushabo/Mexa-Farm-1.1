@@ -2,45 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FishGameCharacter : MonoBehaviour
 {
 
     //all the prefab of the minigame
-    public GameObject miniGame;
-    public GameObject grandson;
+    // public GameObject miniGame;
+    // public GameObject grandson;
 
-    [SerializeField] GameObject cam;
+    // [SerializeField] GameObject cam;
 
-    Vector3 pos;
+    // Vector3 pos;
 
-    //for the text
-    [SerializeField] GameObject panel;
-    [SerializeField] GameObject text_;
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] GameObject winPanel;
-    [SerializeField] TextMeshProUGUI wintext;
-    float timer = 4f;
-    int ti;
+    // //for the text
+    // [SerializeField] GameObject panel;
+    // [SerializeField] GameObject text_;
+    // [SerializeField] TextMeshProUGUI text;
+    // [SerializeField] GameObject winPanel;
+    // [SerializeField] TextMeshProUGUI wintext;
+    // float timer = 4f;
+    // int ti;
 
-    bool firstTime = true;
-    bool end = false;
-    bool enterGame = false;
+    // bool firstTime = true;
+    // bool end = false;
+    // bool enterGame = false;
 
-    float endTimer = 1.5f;
-    public bool pause = false;
+    // float endTimer = 1.5f;
+    // public bool pause = false;
 
     DisableControls disable;
+    public bool startGame = false;
+    [SerializeField] string FishScene;
 
     void Start()
     {
         disable = GetComponent<DisableControls>();
-        pause = true;
-        miniGame = GameObject.Find("FishingGameAppearing");
-        grandson = miniGame.GetComponent<FishGamePart1>().grandson;
+        //pause = true;
+        //miniGame = GameObject.Find("FishingGameAppearing");
+        //grandson = miniGame.GetComponent<FishGamePart1>().grandson;
     }
 
-    public void Update()
+    /*public void Update()
     {
 
         if (firstTime && enterGame)
@@ -64,17 +67,19 @@ public class FishGameCharacter : MonoBehaviour
         pos.z = grandson.transform.position.z;
         grandson.transform.position = pos;
         grandson.SetActive(true);
-    }
+    }*/
 
     public void StartGame()
     {
         disable.DisableControl();
-        enterGame = true;
-        panel.SetActive(true);
-        text_.SetActive(true);
+        startGame = true;
+        SceneManager.LoadScene(FishScene, LoadSceneMode.Additive);
+        //enterGame = true;
+        //panel.SetActive(true);
+        //text_.SetActive(true);
     }
 
-    private void InitGame()
+    /*private void InitGame()
     {
         if (pause)
         {
@@ -90,6 +95,6 @@ public class FishGameCharacter : MonoBehaviour
             text.text = ti.ToString();
 
         }
-    }
+    }*/
 
 }

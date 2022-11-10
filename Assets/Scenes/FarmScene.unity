@@ -18428,46 +18428,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: width
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: height
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: idInList
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: spawnCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: probability
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: objectSpawnLimit
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: spawn.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: targetSaveJSONList
-      value: 
-      objectReference: {fileID: 11400000, guid: 5f519149a1939634780eab2a419a770b, type: 2}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: spawn.Array.data[0]
-      value: 
-      objectReference: {fileID: 3653485640117252067, guid: 97a672b21f48f2b4a9ae7d7ae2e049fb, type: 3}
-    - target: {fileID: 1605921458654329965, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
-      propertyPath: spawn.Array.data[1]
-      value: 
-      objectReference: {fileID: 8007687632057314917, guid: c9811ff14b598ee4e99bf00ee0585600, type: 3}
     - target: {fileID: 1605921458654329966, guid: fa34d1eed2908b04ea58401adf6dde49, type: 3}
       propertyPath: m_Name
       value: ObjectSpawner

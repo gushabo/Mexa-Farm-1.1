@@ -24267,15 +24267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3ec41e0f1e90d40b23be13f3d191cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGame: {fileID: 0}
-  grandson: {fileID: 0}
-  cam: {fileID: 519420028}
-  panel: {fileID: 1218271323}
-  text_: {fileID: 937654923}
-  text: {fileID: 937654925}
-  winPanel: {fileID: 2011612157}
-  wintext: {fileID: 2011612159}
-  pause: 0
+  FishScene: FishingGame
 --- !u!114 &1158473892 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1284127303266079427, guid: ee2533d1eaba95446a996e57c4ea5d0d, type: 3}
@@ -24721,7 +24713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -1217, y: -629.6101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218271325

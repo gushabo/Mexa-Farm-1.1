@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1605921458654329964}
-  - component: {fileID: 1605921458654329962}
   - component: {fileID: 1605921458654329965}
+  - component: {fileID: 7590498078354038482}
   m_Layer: 0
   m_Name: ObjectSpawner
   m_TagString: Untagged
@@ -33,18 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1605921458654329962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605921458654329966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 329b7164c120d994e9ae070988360b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1605921458654329965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,8 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6537baba6e7d8c3448eed54dd4de7b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  height: 3.5
+  width: 3.5
   spawn:
   - {fileID: 3653485640117252067, guid: 97a672b21f48f2b4a9ae7d7ae2e049fb, type: 3}
   - {fileID: 8007687632057314917, guid: c9811ff14b598ee4e99bf00ee0585600, type: 3}
-  probability: 0.3
-  spawnCount: 1
+  probability: 1
+  spawnCount: 10
+  oneTime: 0
+  daysPass: 0
+  targetSaveJSONList: {fileID: 11400000, guid: 5f519149a1939634780eab2a419a770b, type: 2}
+  idInList: 0
+  objectSpawnLimit: -1
+--- !u!114 &7590498078354038482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605921458654329966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 329b7164c120d994e9ae070988360b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
