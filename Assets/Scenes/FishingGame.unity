@@ -658,6 +658,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1607764940}
     - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: scene
+      value: FishingGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
       propertyPath: text_
       value: 
       objectReference: {fileID: 1138678749}
@@ -666,9 +670,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 428190459}
     - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: blowFish
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ac95df06868eee4f84c41fa6cd530be, type: 2}
+    - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: bullFish
+      value: 
+      objectReference: {fileID: 11400000, guid: dbb1687d80cf1b840a9dc26104cad163, type: 2}
+    - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
       propertyPath: winPanel
       value: 
       objectReference: {fileID: 428190457}
+    - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: goldenFish
+      value: 
+      objectReference: {fileID: 11400000, guid: 94efd7eed1d8241408511a0d843e06f0, type: 2}
     - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
       propertyPath: botBoundFish
       value: 
@@ -681,6 +697,10 @@ PrefabInstance:
       propertyPath: FarmSceneName
       value: FarmScene
       objectReference: {fileID: 0}
+    - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
+      propertyPath: Playerinventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 475f09c77f9c43b44872262357191e06, type: 2}
     - target: {fileID: 5530050283895104253, guid: d6f97c9786381844e8f05351e61afea0, type: 3}
       propertyPath: EssentialSceneName
       value: Essential

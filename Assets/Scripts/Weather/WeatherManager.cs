@@ -33,8 +33,6 @@ public class WeatherManager : MonoBehaviour
     //the gameObject that get the crops object
     public GameObject goCrops;
 
-
-
     //Snow vars
     //the gameObject that get the lootContainer 
     public GameObject chestContainer;
@@ -43,6 +41,8 @@ public class WeatherManager : MonoBehaviour
     List<int> x = new List<int>();
     int random;
     Item removeItem;
+
+    bool weatherFlag = false;
 
     private void Start()
     {
@@ -53,14 +53,26 @@ public class WeatherManager : MonoBehaviour
 
     }
 
+    IEnumerator esperaDeTiempo()
+    {
+        weatherFlag = true;
+        yield return new WaitForSeconds(0.5f);
+    }
+
     private void Update()
     {
 
-        if (days < DayTimeController.days)
+        if(days < DayTimeController.days)
         {
             days = DayTimeController.days;
+            StartCoroutine(esperaDeTiempo());
+        }
+
+        if (weatherFlag)
+        {
+            weatherFlag = false;
             RandomWeatherChangeCheck();
-            //flag = true;
+            flag = true;
         }
 
         if (flag == true)
@@ -75,7 +87,6 @@ public class WeatherManager : MonoBehaviour
             }
 
         }
-
 
     }
 

@@ -5761,7 +5761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3df3422e2f14d447a24d3cabc44fc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToChangeWeather: 0.2
+  chanceToChangeWeather: 1
   currentWeatherState: 0
   days: 0
   rainObject: {fileID: 265249278}
@@ -24267,6 +24267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3ec41e0f1e90d40b23be13f3d191cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGame: 0
   FishScene: FishingGame
 --- !u!114 &1158473892 stripped
 MonoBehaviour:

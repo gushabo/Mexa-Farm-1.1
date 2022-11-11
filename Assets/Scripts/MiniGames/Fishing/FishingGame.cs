@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class FishingGame : MonoBehaviour
 {
+
     //Make the fish move
     [Header("Fishing Area")]
     [SerializeField] Transform topBound; // obviosly this are the bounds of the game
@@ -51,13 +52,12 @@ public class FishingGame : MonoBehaviour
     int ti;
 
     bool firstTime = false;
-    bool end = false;
-
-    float endTimer = 1.5f;
+    bool winner = false;
 
     //Reward of the player
     Currency money;
-
+    //inventory of the player
+    [SerializeField] ItemContainer Playerinventory;
     //Get the character
     GameObject go;
     //know if we start the game
@@ -66,13 +66,21 @@ public class FishingGame : MonoBehaviour
     GameObject cameraPos;
     //New position of the mini game
     Vector3 finalPosition;
-    
+    //the posibility to get some fish
+    float x;
+    //items of the fish
+    [SerializeField] Item goldenFish;
+    [SerializeField] Item bullFish;
+    [SerializeField] Item blowFish;
+
+    [SerializeField] string scene;
+
 
     private void Start()
     {
         go = GameObject.Find("MainCharacter");
         cameraPos = GameObject.Find("Main Camera");
-        if(go == null){return;}
+        if (go == null) { return; }
         finalPosition = cameraPos.transform.position;
         finalPosition.z = -1.1f;
         gameObject.transform.position = finalPosition;
@@ -87,27 +95,33 @@ public class FishingGame : MonoBehaviour
 
     }
 
+    void giveFish()
+    {
+        //obtain the random number to get the probabilities
+        x = UnityEngine.Random.value;
+        if (x <= .15f)
+        {
+            //add golden fish
+            Playerinventory.Add(goldenFish);
+        }
+        if (x > .15f && x <= .35f)
+        { 
+            //add bull fish   
+            Playerinventory.Add(bullFish);
+        }
+        if(x > .35f)
+        {
+            //add blowfish
+            Playerinventory.Add(blowFish);
+        }
+    }
+
     private void Update()
     {
         //si es que es la primera vez entra aqui
         if (firstTime)
         {
             InitGame();
-        }
-        //si es que se acaba el juego se entra aqui
-        if (end)
-        {
-            //bajamos el timer
-            endTimer -= Time.deltaTime;
-            Debug.Log(endTimer);
-            //revisamos cuando sea menor que cero
-            if (endTimer <= 0)
-            {
-                //Debug.Log("cambio de escenas");
-                Debug.Log("se acabo el tiempo XD del timer");
-            }
-            ti = Mathf.FloorToInt(endTimer);
-            text.text = ti.ToString();
         }
         //si es que no estamos en pausa y podemos jugar pasa este if
         if (pause) { return; }
@@ -181,23 +195,32 @@ public class FishingGame : MonoBehaviour
 
     }
 
+    IEnumerator corrutinaDeTiempoDeEspera()
+    {
+        yield return new WaitForSeconds(1.5f);
+        go.GetComponent<DisableControls>().EnableControl();
+        if(winner) {giveFish();}
+        SceneManager.UnloadScene(scene);
+    }
+
     private void Win()
     {
         pause = true;
-        //wintext.text = "U WIN!!!";
-        //winPanel.SetActive(true);
-        //panel.SetActive(true);
-        //end = true;
-
+        wintext.text = "U WIN!!!";
+        winPanel.SetActive(true);
+        panel.SetActive(true);
+        money.Add(20);
+        winner = true;
+        StartCoroutine(corrutinaDeTiempoDeEspera());
     }
 
     private void Lost()
     {
         pause = true;
-        //wintext.text = "U LOSE :c";
-        //winPanel.SetActive(true);
-        //panel.SetActive(true);
-        //end = true;
+        wintext.text = "U LOSE :c";
+        winPanel.SetActive(true);
+        panel.SetActive(true);
+        StartCoroutine(corrutinaDeTiempoDeEspera());
     }
 
     private void MoveHook()
