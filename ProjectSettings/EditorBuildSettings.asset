@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CatchFruitMiniGame.unity
     guid: 8c9bcff8dfc7bb84fb8c4ed9820aab7a
+  - enabled: 1
+    path: Assets/Scenes/Whac a Mole.unity
+    guid: 19f10007a8fbd604aba3ff670c98f514
   m_configObjects: {}

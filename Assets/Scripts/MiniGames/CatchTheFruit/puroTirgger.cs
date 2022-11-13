@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class puroTirgger : MonoBehaviour
 {
-    [SerializeField] CharacterMovement characterMovement;
+    [SerializeField] GameObject player;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("frutas"))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Choca con la fruta");
-            Destroy(other.gameObject);
-            characterMovement.points += 1;
+            other.GetComponent<CharacterMovement>().AddPoints();
+            Destroy(gameObject);
         }
     }
 }

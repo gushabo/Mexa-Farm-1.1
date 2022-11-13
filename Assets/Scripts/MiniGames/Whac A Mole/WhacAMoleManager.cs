@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WhacAMoleManager : MonoBehaviour
 {
@@ -16,13 +17,23 @@ public class WhacAMoleManager : MonoBehaviour
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI finalText;
 
-    private float startingTime = 30f;
     //Global variables
-    private float timeRemaining;
     private HashSet<mole> currentMoles = new HashSet<mole>();
     private int score;
     private bool playing = false;
+    //get the player
+    GameObject go;
+    //timer to get out the game
+    float timer = 1.4f;
+    private bool end;
+
+    public void Start()
+    {
+        go = GameObject.Find("MainCharacter");
+    }
+
 
     public void StartGame()
     {
@@ -38,8 +49,6 @@ public class WhacAMoleManager : MonoBehaviour
         }
         //Remove any older game state
         currentMoles.Clear();
-        //Start with 30 seconds
-        timeRemaining = startingTime;
         score = 0;
         scoreText.text = "0";
         playing = true;
@@ -49,7 +58,9 @@ public class WhacAMoleManager : MonoBehaviour
     public void GameOver()
     {
         //show the message
+        finalText.text = "U lose :c";
         gameOverText.SetActive(true);
+
 
         //Hide all moles
         foreach (mole mole in moles)
@@ -58,6 +69,9 @@ public class WhacAMoleManager : MonoBehaviour
         }
         //stop the game and show the UI
         playing = false;
+        Debug.Log("perdiste pedazo de boludo");
+        end = true;
+        go.GetComponent<UsingArcade>().FinishGame(true);
 
     }
 
@@ -65,14 +79,11 @@ public class WhacAMoleManager : MonoBehaviour
     {
         if (playing)
         {
-            //Updating time
-            timeRemaining -= Time.deltaTime;
-            if (timeRemaining <= 0 || lifes == 0)
+
+            if (lifes == 0)
             {
-                timeRemaining = 0;
                 GameOver();
             }
-            timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
             // Check if we need to start any more moles.
             if (lifes > 0)
             {
@@ -87,7 +98,17 @@ public class WhacAMoleManager : MonoBehaviour
             }
 
         }
+        if(end)
+        {
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+            {
+               SceneManager.UnloadScene("Whac a Mole");
+            }
+        }
+
     }
+
 
     public void AddScore(int moleIndex)
     {
@@ -96,6 +117,30 @@ public class WhacAMoleManager : MonoBehaviour
         scoreText.text = $"{score}";
         //remove the mole from the actives
         currentMoles.Remove(moles[moleIndex]);
+        if (score == 5)
+        {
+            uWIN();
+        }
+
+    }
+
+    private void uWIN()
+    {
+        //show the message
+        finalText.text = "U WIN!!!";
+        gameOverText.SetActive(true);
+
+        //Hide all moles
+        foreach (mole mole in moles)
+        {
+            mole.StopGame();
+        }
+        //stop the game and show the UI
+        playing = false;
+        Debug.Log("ganaste gil");
+        end = true;
+        go.GetComponent<Currency>().Add(15);
+        go.GetComponent<UsingArcade>().FinishGame(true);
 
     }
 

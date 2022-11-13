@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FruitSpawn : MonoBehaviour
 {
@@ -12,25 +13,33 @@ public class FruitSpawn : MonoBehaviour
     [SerializeField] float min;
     [SerializeField] float max;
 
+    [SerializeField] private UnityEvent onWin;
+
     //the fruit gameObject
     GameObject go;
-    
-    //llamacion al otro script
-    [SerializeField] pusoPared pared;
+
+    //the amount of fruits that have appear 
+    int fruits = 0;
 
     void Start()
     {
-        StartCoroutine(fruit());    
+        StartCoroutine(fruit());
     }
 
     IEnumerator fruit()
     {
-        while(pared.lives > 0){
+        while (fruits < 8)
+        {
             var wanted = Random.Range(min, max);
-            var position = new Vector3(wanted,transform.position.y);
-            go = Instantiate(fruitPrefabs[Random.Range(0, fruitPrefabs.Length)],position,Quaternion.identity);
+            var position = new Vector3(wanted, transform.position.y);
+            go = Instantiate(fruitPrefabs[Random.Range(0, fruitPrefabs.Length)], position, Quaternion.identity);
+            fruits++;
             yield return new WaitForSeconds(secondSpawn);
         }
+        onWin?.Invoke();
+
     }
+
+
 
 }
