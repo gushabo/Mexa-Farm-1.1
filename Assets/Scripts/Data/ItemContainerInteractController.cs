@@ -14,6 +14,10 @@ public class ItemContainerInteractController : MonoBehaviour
     Transform openedChest;
     //the max distance of interaction
     [SerializeField] float maxDistance = 0.5f;
+    //the upgrade of the chest
+    public bool upgrade;
+    [SerializeField] GameObject noMoney;
+    [SerializeField] GameObject button;
 
 
     private void Awake()
@@ -39,6 +43,14 @@ public class ItemContainerInteractController : MonoBehaviour
         inventoryController.Open();
         itemContainerPanel.gameObject.SetActive(true);
         openedChest = _openedChest;
+        if(upgrade)
+        {
+            button.SetActive(false);
+        }else
+        {
+            button.SetActive(true);
+        }
+
     }
 
     public void Close()
@@ -48,6 +60,28 @@ public class ItemContainerInteractController : MonoBehaviour
         openedChest = null;
 
     }
+
+    public void BuyUpgrade()
+    {
+        StartCoroutine(buy());
+    }
+
+    IEnumerator buy()
+    {
+        if(gameObject.GetComponent<Currency>().Check(100))
+        {
+            gameObject.GetComponent<Currency>().Decrease(100);
+            upgrade = true;
+            button.SetActive(false);
+        }else
+        {
+            noMoney.SetActive(true);
+            yield return new WaitForSeconds(1);
+            noMoney.SetActive(false);
+        }
+        StopAllCoroutines();
+    }
+
 
     
 }

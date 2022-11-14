@@ -36,6 +36,7 @@ public class WeatherManager : MonoBehaviour
     //Snow vars
     //the gameObject that get the lootContainer 
     public GameObject chestContainer;
+    public GameObject player;
     //the container from the silo
     ItemContainer itemContainer;
     List<int> x = new List<int>();
@@ -48,6 +49,7 @@ public class WeatherManager : MonoBehaviour
     {
         goCrops = GameObject.Find("CropsTilemap");
         cropsW = goCrops.GetComponent<TilemapCropsManager>().container;
+        player = GameObject.Find("MainCharacter");
         chestContainer = GameObject.Find("ChestObject");
         itemContainer = chestContainer.GetComponent<LootContainerInteract>().itemContainer;
 
@@ -94,7 +96,7 @@ public class WeatherManager : MonoBehaviour
     {
         if (currentWeatherState == WeatherStates.Snow)
         {
-            if (chestContainer.GetComponent<LootContainerInteract>().upgrade == false)
+            if (player.GetComponent<ItemContainerInteractController>().upgrade == false)
             {
                 for (int i = 0; i < itemContainer.slots.Count; i++)
                 {
@@ -109,7 +111,7 @@ public class WeatherManager : MonoBehaviour
                 removeItem = itemContainer.slots[random].item;
                 itemContainer.Remove(removeItem);
                 x.RemoveAt(random);
-            }
+            }else{Debug.Log("tienes la mejora tonses todo bien");}
 
         }
     }

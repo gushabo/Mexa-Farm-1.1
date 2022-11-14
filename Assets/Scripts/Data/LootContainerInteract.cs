@@ -10,18 +10,18 @@ public class LootContainerInteract : Interactable
     [SerializeField] bool open;
     [SerializeField] AudioClip onOpenAudio;
     [SerializeField] public ItemContainer itemContainer;
-    public bool upgrade;
 
 
     public override void Interact(Character character)
     {
+
         if (open == false)
         {
-           Open(character);
+            Open(character);
         }
         else
         {
-           Close(character);
+            Close(character);
         }
     }
 

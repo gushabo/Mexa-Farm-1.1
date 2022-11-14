@@ -20,7 +20,7 @@ public class mole : MonoBehaviour
     private float showDuration = 0.7f;
     private float duration = 1;
 
-    private SpriteRenderer renderer;
+    private new SpriteRenderer renderer;
 
     //mole parameters
     private bool hitable = true;
@@ -126,7 +126,6 @@ public class mole : MonoBehaviour
         // Mark as hittable so we can register an onclick event.
         hitable = true;
     }
-
 
 
     public void StopGame()
