@@ -32,6 +32,10 @@ public class MailBox : MonoBehaviour
     //number of days
     int days = 0;
     int daysPass = 0;
+    [SerializeField] TextMeshProUGUI daystext;
+
+    //to put the sign above the mailbox
+    public GameObject sign;
 
     //the script that help us to disable the control of the player
     DisableControls disableControls;
@@ -40,6 +44,7 @@ public class MailBox : MonoBehaviour
     {
         money = GetComponent<Currency>();
         disableControls = GetComponent<DisableControls>();
+        sign = GameObject.Find("Sign");
     }
 
     private void Update()
@@ -68,6 +73,25 @@ public class MailBox : MonoBehaviour
             }
         }
 
+        //this is for only the view of the signs
+        if(daysPass < 2)
+        {
+            Debug.Log("la verde");
+            sign.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        if(daysPass > 1 && daysPass < 4)
+        {
+            Debug.Log("la amarilla");
+            sign.GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
+        if(daysPass > 3)
+        {
+            Debug.Log("la roja");
+            sign.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+
+
+        //this is for the price of the mailBox 
         if (daysPass <= 4)
         { actualprice = price; }
 
@@ -86,16 +110,18 @@ public class MailBox : MonoBehaviour
         MailBoxPanel.SetActive(true);
         mail = transform;
         text.text = actualprice.ToString();
+        daystext.text = "Days past: " + (daysPass+1).ToString();
+
     }
 
     public void PayMailBox()
     {
         if (money.Check(price) == true)
         {
+            //actions that happens when u pay XD
             money.Decrease(price);
             MailBoxPanel.SetActive(false);
             daysPass = 0;
-            //actions that happens when u pay XD
         }
         else
         {
@@ -104,7 +130,7 @@ public class MailBox : MonoBehaviour
         }
     }
 
-    //here we close the trading panel
+    //here we close the mailBox panel
     public void CloseMenu()
     {
         //put invisible all the panels
@@ -113,7 +139,6 @@ public class MailBox : MonoBehaviour
 
     public void GameOver()
     {
-        //this is the function that i'm going to use to finish the game in this part
         //disable all the controls of the player
         disableControls.DisableControl();
         gameOverPanel.SetActive(true);
