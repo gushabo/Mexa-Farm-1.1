@@ -16,7 +16,7 @@ public class DayTimeController : MonoBehaviour
     */
 
     const float phaseLenght = 900f; //15 min in seconds
-    const float phasesInDay = 96f; //Seconds divided by phaseLenght 
+    const float phasesInDay = 96f; //Seconds divided by phaseLenght
 
     [SerializeField] Color NightLightColor;
     [SerializeField] AnimationCurve NightTimeCurve;

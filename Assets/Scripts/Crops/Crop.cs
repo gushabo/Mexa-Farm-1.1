@@ -24,4 +24,10 @@ public class Crop : ScriptableObject
     public int MaxWater = 5;
     public int daysWithOutWater = 0;
 
+    public void CreaCollider(GameObject _cultivo)
+    {
+        BoxCollider2D sc = _cultivo.AddComponent(typeof(BoxCollider2D)) as BoxCollider2D;
+    }
+
+
 }

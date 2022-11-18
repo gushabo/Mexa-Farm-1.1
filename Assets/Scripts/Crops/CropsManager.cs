@@ -27,6 +27,18 @@ public class CropTile  //this will keep the info of the tiles crops in each inst
     public int dayPlanted = DayTimeController.days;
 
     public int CurrWater=0;
+    //check if it's protected by a scareCrow
+    public bool crowProtect;
+
+    /*
+     escoger una var enfermedad 
+    bool enfermedad = true;
+
+    script del cuadrito 
+    sprites[] = (todas las imagenes)
+    
+
+    */
     
 
     //this var is to check if the crop is fully grown

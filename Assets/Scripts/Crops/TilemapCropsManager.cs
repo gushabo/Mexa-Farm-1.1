@@ -17,15 +17,20 @@ public class TilemapCropsManager : MonoBehaviour
     //the days that have passed
     public int days = 0;
 
+    //detector de cuervos
+    [SerializeField] GameObject cuadrito;
+    public List<detector> lista;
+
     //the container when is going to have all the crops
     [SerializeField] public CropsContainer container;
+    //the container of the placed scarecrows
+    [SerializeField] public PlaceableObjectsContainer scareCrowsList;
 
     //the crop whole object
     [SerializeField] GameObject cropsSpritePrefab;
 
     private void Start()
     {
-
         GameManager.instance.GetComponent<CropsManager>().cropsManager = this;
         targetTilemap = GetComponent<Tilemap>();
         VisualizeMap();
@@ -265,14 +270,24 @@ public class TilemapCropsManager : MonoBehaviour
         //this only add the position and the state of the tile to the dictionary
         CropTile crop = new CropTile();
         container.Add(crop);
-
         crop.position = position;
+
+        //Crear cuadrito de deteccion de cuervos y colocarlo en una lista :D
+        GameObject go = Instantiate(cuadrito,crop.position,Quaternion.identity);
+
+        Invoke(nameof(retraso), 0.1f);
+        detector dc = go.GetComponent<detector>();
+        lista.Add(dc);
+        dc.indice = lista.Count - 1;
+        dc.container = container;
 
         VisualizeTile(crop);
 
         //this changes the view of the tile
         targetTilemap.SetTile(position, plowed);
     }
+
+    void retraso(){}
 
     //this is pickUp the crops
     internal void PickUp(Vector3Int gridPosition)
