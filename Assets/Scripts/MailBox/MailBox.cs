@@ -77,17 +77,14 @@ public class MailBox : MonoBehaviour
         //this is for only the view of the signs
         if(daysPass < 2)
         {
-            Debug.Log("la verde");
             sign.GetComponent<SpriteRenderer>().color = Color.green;
         }
         if(daysPass > 1 && daysPass < 4)
         {
-            Debug.Log("la amarilla");
             sign.GetComponent<SpriteRenderer>().color = Color.yellow;
         }
         if(daysPass > 3)
         {
-            Debug.Log("la roja");
             sign.GetComponent<SpriteRenderer>().color = Color.red;
         }
 

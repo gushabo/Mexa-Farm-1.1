@@ -208,7 +208,7 @@ TextureImporter:
         width: 52
         height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,7 +229,7 @@ TextureImporter:
         width: 131
         height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,6 +237,27 @@ TextureImporter:
       bones: []
       spriteID: 554ad46e5f087ed428a87eac345aad49
       internalID: 1019193373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MorritaDOfertas
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 228
+        width: 46
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f7080b479a6374f8e70d9c4f635c95
+      internalID: 1025293448
       vertices: []
       indices: 
       edges: []
@@ -255,6 +276,7 @@ TextureImporter:
       ElBarbasCabezon: -1436715956
       DonRafaCabezon: -1358980761
       ElBarbas: 483375965
+      MorritaDOfertas: 1025293448
       child: 1092095870
       Don Rafa: -659951819
       ChildCabezon: 1019193373
