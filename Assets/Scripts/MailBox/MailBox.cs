@@ -45,6 +45,7 @@ public class MailBox : MonoBehaviour
         money = GetComponent<Currency>();
         disableControls = GetComponent<DisableControls>();
         sign = GameObject.Find("Sign");
+        if(sign == null){return;}
     }
 
     private void Update()

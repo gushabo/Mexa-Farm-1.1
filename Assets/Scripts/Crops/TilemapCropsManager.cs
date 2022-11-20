@@ -263,6 +263,11 @@ public class TilemapCropsManager : MonoBehaviour
         }
     }
 
+    public void ReturnToDirt(int i)
+    {
+        targetTilemap.SetTile(container.crops[i].position, Dirt);
+    }
+
     //this creates the plow tile
     private void CreatePlowedTile(Vector3Int position)
     {

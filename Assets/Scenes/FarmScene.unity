@@ -8082,7 +8082,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8197,6 +8197,8 @@ MonoBehaviour:
   seeded: {fileID: 11400000, guid: 1509722d13d0d8d468e48672a463b4a7, type: 2}
   Dirt: {fileID: 11400000, guid: 825ab2578e7f99745b39cda6f4091fc7, type: 2}
   days: 0
+  cuadrito: {fileID: 1164816161964893088, guid: f7a7aade74e9da14ca689da59cc47cdc, type: 3}
+  lista: []
   container: {fileID: 11400000, guid: 27e948bfa4c658945865efd5f249519f, type: 2}
   scareCrowsList: {fileID: 0}
   cropsSpritePrefab: {fileID: 151313204680158216, guid: 91df7578b8e0561448fbfdb42bc35147, type: 3}
@@ -11478,7 +11480,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
