@@ -10,16 +10,7 @@ public class ItemStorePanel : ItemPanel
 
     //checks for the click
     public override void OnClick(int id)
-    {
-        //trading proccess
-        // if the player is dragging any item that is going to get selled if not is going to buy
-        /*if(GameManager.instance.dragNDropController.itemSlot.item == null)
-        {
-            BuyItem(id);
-        }else{
-           SellItem(id); 
-        }*/
-        
+    {   
         Show();
     }
 

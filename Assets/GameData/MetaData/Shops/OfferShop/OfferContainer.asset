@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28dc0c843344b454bb5901652103edcd, type: 3}
+  m_Name: OfferContainer
+  m_EditorClassIdentifier: 
+  slots:
+  - item: {fileID: 11400000, guid: ccbffdad8753b5640aa93b42ac23eb1c, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: 5c10a7f0dcaf36844ad4874e5315f024, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: 17fc0c4f497f4d342ac7d32066dc5ef6, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: 86b247ef273143240b7140c81a1dc7d0, type: 2}
+    count: 1
+  isDirty: 0
