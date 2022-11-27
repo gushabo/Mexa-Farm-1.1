@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScareCrow
   m_EditorClassIdentifier: 
   Name: Scarecrow
-  id: 6
+  id: 5
   Stackable: 1
   Icon: {fileID: 936105612, guid: 59df27be6b98e3a47b791cad8bdc9d26, type: 3}
   OnAction: {fileID: 0}
@@ -22,3 +22,8 @@ MonoBehaviour:
   crop: {fileID: 0}
   iconHighlight: 1
   itemPrefab: {fileID: 2930531578929675599, guid: fccdd81749b94cb409ac80e35a6f6d49, type: 3}
+  maxCapacity: 0
+  capacity: 0
+  priceToBuy: 10
+  priceToSell: 10
+  canBeSold: 1

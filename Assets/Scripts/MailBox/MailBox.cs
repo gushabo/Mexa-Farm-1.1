@@ -50,6 +50,7 @@ public class MailBox : MonoBehaviour
 
     private void Update()
     {
+
         //sumar los dias pasados
         if (days < DayTimeController.days) { days = DayTimeController.days; daysPass++; }
         //revisar si la var de no tener dinero se activa para tener el contador

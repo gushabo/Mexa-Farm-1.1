@@ -6,6 +6,7 @@ public class detector : MonoBehaviour
 {
     public int indice;
     public CropsContainer container;
+    public Vector3Int position;
 
     private void OnTriggerStay2D(Collider2D other) {
         container.crops[indice].crowProtect = true;

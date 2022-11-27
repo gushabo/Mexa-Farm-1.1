@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PezGlobo
   m_EditorClassIdentifier: 
   Name: PezGlobo
-  id: 0
+  id: 10
   Stackable: 1
   Icon: {fileID: -1560557610, guid: 1dc99bac55c319043b7192a08af74322, type: 3}
   OnAction: {fileID: 0}

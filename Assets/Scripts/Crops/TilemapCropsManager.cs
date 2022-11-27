@@ -20,6 +20,7 @@ public class TilemapCropsManager : MonoBehaviour
     //detector de cuervos
     [SerializeField] GameObject cuadrito;
     public List<detector> lista;
+    public bool crowsCheck;
 
     //the container when is going to have all the crops
     [SerializeField] public CropsContainer container;
@@ -60,7 +61,18 @@ public class TilemapCropsManager : MonoBehaviour
         {
             if (cropTile.crop == null) { continue; }
 
-            //0.02 * 50 ticks it will cause that the crop die
+            //this checks if the crow is on the scene and will destroy the crops
+            if (crowsCheck)
+            {
+                if (!cropTile.crowProtect)
+                {
+                    cropTile.Harvested();
+                    targetTilemap.SetTile(cropTile.position, plowed);
+                    continue;
+                }
+            }
+
+            //0.02 * 50 ticks it will cause that the crop die this is for the timelife been 2 days
             if (cropTile.damage >= 1f)
             {
                 cropTile.Harvested();
@@ -68,6 +80,7 @@ public class TilemapCropsManager : MonoBehaviour
                 continue;
             }
 
+            //this i can delete it but i'm gonna keep it
             if (cropTile.Complete)
             {
                 Debug.Log("It's completely grown");
@@ -118,15 +131,14 @@ public class TilemapCropsManager : MonoBehaviour
                 }
                 //this puts all the current water in 0 every day and the fertilize var
                 cropTile.CurrWater = 0;
-                cropTile.waterTime = 0;
                 cropTile.watered = false;
+                cropTile.waterTime = 30;
 
             }
 
         }
+        crowsCheck = false;
         days = DayTimeController.days;
-        
-
     }
 
     private void VisualizeMap()
@@ -236,6 +248,20 @@ public class TilemapCropsManager : MonoBehaviour
         {
             targetTilemap.SetTile(cropTile.position, Dirt);
             container.Substract(cropTile);
+
+            //aqui iba el if apa de los cuadrito magicos :D
+            //checks in all the list of the detector if someone have the same position as the crops that is going to be delete it
+            for (int i = 0; i < lista.Count; i++)
+            {
+                //if the position is the same the gameObject is being destroy
+                if (lista[i].position == cropTile.position)
+                {
+                    Destroy(lista[i].gameObject);
+                    lista.RemoveAt(i);
+                    Debug.Log("indice:" + i);
+                }
+            }
+
         }
 
         //this is the change of the tile state in the info
@@ -278,21 +304,30 @@ public class TilemapCropsManager : MonoBehaviour
         crop.position = position;
 
         //Crear cuadrito de deteccion de cuervos y colocarlo en una lista :D
-        GameObject go = Instantiate(cuadrito,crop.position,Quaternion.identity);
+        GameObject go = Instantiate(cuadrito, crop.position, Quaternion.identity);
 
+        //da un retraso para que tenga tiempo de instancia el cuadro y  guardarlo
         Invoke(nameof(retraso), 0.1f);
+        //obtiene el componente del cuadro creado para poder obtener su script
         detector dc = go.GetComponent<detector>();
+        //al cuadro especifico en el momento se le guarda la posicion en una variable
+        dc.position = position;
+        //se agrega el cuadro a una lista
         lista.Add(dc);
+        /*
+        se iguala el indice del contenedor de cultivos al de los cuadros y se iguala la variable del contenedor de cultivos
+        en la variable del contenedor del cuadro
+        */
         dc.indice = lista.Count - 1;
         dc.container = container;
-
+        //se manda a que se visualize el cultivo creado
         VisualizeTile(crop);
 
         //this changes the view of the tile
         targetTilemap.SetTile(position, plowed);
     }
 
-    void retraso(){}
+    void retraso() { }
 
     //this is pickUp the crops
     internal void PickUp(Vector3Int gridPosition)
@@ -307,7 +342,6 @@ public class TilemapCropsManager : MonoBehaviour
             //this spawn the crop
             ItemSpawnManager.instance.SpawnItem(targetTilemap.CellToWorld(gridPosition), tile.crop.yield, tile.crop.count);
             //this sets all values in 0
-
             tile.Harvested();
             VisualizeTile(tile);
 

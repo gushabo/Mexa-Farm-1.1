@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
   Name: Pickaxe
-  id: 2
+  id: 3
   Stackable: 0
   Icon: {fileID: 21300000, guid: 6e28235e1eb2c4a45bd2423a4daacc74, type: 3}
   OnAction: {fileID: 11400000, guid: b883c6ea5b5555f4d9bced2c16a99124, type: 2}
@@ -22,3 +22,8 @@ MonoBehaviour:
   crop: {fileID: 0}
   iconHighlight: 0
   itemPrefab: {fileID: 0}
+  maxCapacity: 0
+  capacity: 0
+  priceToBuy: 10
+  priceToSell: 10
+  canBeSold: 1

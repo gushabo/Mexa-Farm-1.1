@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PezDorado
   m_EditorClassIdentifier: 
   Name: PezDorado
-  id: 0
+  id: 8
   Stackable: 1
   Icon: {fileID: 21300000, guid: 99ee7f7d4a81c8743874acbcc938102f, type: 3}
   OnAction: {fileID: 0}

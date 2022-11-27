@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 713ee76b7235b9c48ac81b43e4c4a2ab, type: 3}
-  m_Name: Plow
+  m_Name: Egg
   m_EditorClassIdentifier: 
-  Name: Plow
-  id: 1
-  Stackable: 0
-  Icon: {fileID: 21300000, guid: 84ce684f897e1a14dad78819ccda94ea, type: 3}
+  Name: Egg
+  id: 20
+  Stackable: 1
+  Icon: {fileID: 21300000, guid: 4b9dd94b2402a3a448d4392ac8eab2e2, type: 3}
   OnAction: {fileID: 0}
-  onTileMapAction: {fileID: 11400000, guid: 9820af72ca417cc41b7a0a3363ffb3bd, type: 2}
+  onTileMapAction: {fileID: 0}
   onItemUsed: {fileID: 0}
   crop: {fileID: 0}
   iconHighlight: 0
   itemPrefab: {fileID: 0}
   maxCapacity: 0
   capacity: 0
-  priceToBuy: 10
-  priceToSell: 10
+  priceToBuy: 15
+  priceToSell: 15
   canBeSold: 1

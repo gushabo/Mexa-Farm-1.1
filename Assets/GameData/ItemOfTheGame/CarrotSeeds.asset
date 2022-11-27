@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CarrotSeeds
   m_EditorClassIdentifier: 
   Name: CarrotSeeds
-  id: 5
+  id: 12
   Stackable: 1
   Icon: {fileID: -1022140569, guid: 07efac6eb507ff847a45d2f33e0e8edf, type: 3}
   OnAction: {fileID: 0}

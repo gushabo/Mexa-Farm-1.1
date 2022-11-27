@@ -11,7 +11,7 @@ public class InventoryController : MonoBehaviour
 
     private void Update()
     {
-        //gives the chance to open the inventory with the "I"
+        //gives the chance to open the inventory with the "E"
         if (Input.GetKeyDown(KeyCode.E))
         {
             if(panel.activeInHierarchy == false)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RadishSeeds
   m_EditorClassIdentifier: 
   Name: RadishSeeds
-  id: 0
+  id: 11
   Stackable: 1
   Icon: {fileID: -1554524438, guid: 94ea0288814013143b0cc302ca00e650, type: 3}
   OnAction: {fileID: 0}

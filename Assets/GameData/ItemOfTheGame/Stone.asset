@@ -22,3 +22,8 @@ MonoBehaviour:
   crop: {fileID: 0}
   iconHighlight: 0
   itemPrefab: {fileID: 0}
+  maxCapacity: 0
+  capacity: 0
+  priceToBuy: 10
+  priceToSell: 10
+  canBeSold: 1
