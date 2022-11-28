@@ -34,9 +34,6 @@ public class MailBox : MonoBehaviour
     int daysPass = 0;
     [SerializeField] TextMeshProUGUI daystext;
 
-    //to put the sign above the mailbox
-    public GameObject sign;
-
     //the script that help us to disable the control of the player
     DisableControls disableControls;
 
@@ -44,8 +41,6 @@ public class MailBox : MonoBehaviour
     {
         money = GetComponent<Currency>();
         disableControls = GetComponent<DisableControls>();
-        sign = GameObject.Find("Sign");
-        if(sign == null){return;}
     }
 
     private void Update()
@@ -75,21 +70,6 @@ public class MailBox : MonoBehaviour
             }
         }
 
-        //this is for only the view of the signs
-        if(daysPass < 2)
-        {
-            sign.GetComponent<SpriteRenderer>().color = Color.green;
-        }
-        if(daysPass > 1 && daysPass < 4)
-        {
-            sign.GetComponent<SpriteRenderer>().color = Color.yellow;
-        }
-        if(daysPass > 3)
-        {
-            sign.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-
-
         //this is for the price of the mailBox 
         if (daysPass <= 4)
         { actualprice = price; }
@@ -109,7 +89,7 @@ public class MailBox : MonoBehaviour
         MailBoxPanel.SetActive(true);
         mail = transform;
         text.text = actualprice.ToString();
-        daystext.text = "Days past: " + (daysPass+1).ToString();
+        daystext.text = "Days past: " + (daysPass + 1).ToString();
 
     }
 

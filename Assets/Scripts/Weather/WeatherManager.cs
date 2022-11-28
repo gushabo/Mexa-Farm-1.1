@@ -27,32 +27,19 @@ public class WeatherManager : MonoBehaviour
     float timer = 1.5f;
     bool flag = false;
 
-    //Rain vars
-    //the container when all the crops are
-    CropsContainer cropsW;
-    //the gameObject that get the crops object
-    public GameObject goCrops;
-
-    //Snow vars
-    //the gameObject that get the lootContainer 
-    public GameObject chestContainer;
-    public GameObject player;
-    //the container from the silo
-    ItemContainer itemContainer;
-    List<int> x = new List<int>();
-    int random;
-    Item removeItem;
-
     bool weatherFlag = false;
 
-    private void Start()
-    {
-        goCrops = GameObject.Find("CropsTilemap");
-        cropsW = goCrops.GetComponent<TilemapCropsManager>().container;
-        player = GameObject.Find("MainCharacter");
-        chestContainer = GameObject.Find("ChestObject");
-        itemContainer = chestContainer.GetComponent<LootContainerInteract>().itemContainer;
+    public static WeatherManager instance;
+    public bool snow;
+    public bool rain;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            WeatherManager.instance = this;
+        }
+        else { Destroy(gameObject); }
     }
 
     IEnumerator esperaDeTiempo()
@@ -64,7 +51,7 @@ public class WeatherManager : MonoBehaviour
     private void Update()
     {
 
-        if(days < DayTimeController.days)
+        if (days < DayTimeController.days)
         {
             days = DayTimeController.days;
             StartCoroutine(esperaDeTiempo());
@@ -96,23 +83,7 @@ public class WeatherManager : MonoBehaviour
     {
         if (currentWeatherState == WeatherStates.Snow)
         {
-            if (player.GetComponent<ItemContainerInteractController>().upgrade == false)
-            {
-                for (int i = 0; i < itemContainer.slots.Count; i++)
-                {
-                    if (itemContainer.slots[i].item == null) continue;
-                    if (itemContainer.slots[i].item != null)
-                    {
-                        x.Add(i);
-                    }
-                    if(x.Count == 0){return;}
-                }
-                random = UnityEngine.Random.Range(0, x.Count - 1);
-                removeItem = itemContainer.slots[random].item;
-                itemContainer.Remove(removeItem);
-                x.RemoveAt(random);
-            }else{Debug.Log("tienes la mejora tonses todo bien");}
-
+            snow = true;
         }
     }
 
@@ -120,11 +91,7 @@ public class WeatherManager : MonoBehaviour
     {
         if (currentWeatherState == WeatherStates.Rain)
         {
-            foreach (CropTile cropTile in cropsW.crops)
-            {
-                cropTile.CurrWater++;
-            }
-
+            rain = true;
         }
     }
 

@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d18a55026b4aae4b9eb8965b9cb2b7e, type: 3}
-  m_Name: Mine
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: Dirt2RuleTile
   m_EditorClassIdentifier: 
-  energyCost: 5
-  SizeOfInteractableArea: 1
-  canHitNodesOfType: 04000000
+  m_DefaultSprite: {fileID: 21300000, guid: 1f021de3fc815894aad81412fc3c8eb4, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 0
+  m_TilingRules: []

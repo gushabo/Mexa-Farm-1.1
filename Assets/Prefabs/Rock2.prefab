@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5196666334222532372}
   - component: {fileID: 9127860181711601091}
   m_Layer: 0
-  m_Name: Rock
+  m_Name: Rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e319a73ae93b63b4cb3b884963a41991, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d81b092e15fc34b47964d5f0f9b858fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.125, y: 2.125}
+    oldSize: {x: 0.34, y: 0.34}
     newSize: {x: 1.0625, y: 1.0625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: bca762b769590e24881381d576bc0406, type: 2}
   ItemCountInOneDrop: 1
   Dropcount: 1
-  nodeType: 4
+  nodeType: 5
 --- !u!114 &9127860181711601091
 MonoBehaviour:
   m_ObjectHideFlags: 0

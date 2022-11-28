@@ -6,6 +6,7 @@ public class MailBoxPay : Interactable
 {
 
     [SerializeField] bool open;
+    [SerializeField] GameObject sign;
 
     public override void Interact(Character character)
     {
@@ -32,5 +33,20 @@ public class MailBoxPay : Interactable
         if (mailBox == null) {return;}
         mailBox.CloseMenu();
     }
+
+    private void Update() {
+        if(DayTimeController.days < 2){
+            sign.GetComponent<SpriteRenderer>().color = Color.green;   
+        }
+        if(DayTimeController.days < 4 && DayTimeController.days > 1){
+            sign.GetComponent<SpriteRenderer>().color = Color.yellow;   
+        }
+        if(DayTimeController.days >= 4){
+            sign.GetComponent<SpriteRenderer>().color = Color.red;   
+        }
+
+    }
+
+
 
 }

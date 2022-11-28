@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d18a55026b4aae4b9eb8965b9cb2b7e, type: 3}
-  m_Name: Mine
+  m_Name: CutTrees2
   m_EditorClassIdentifier: 
   energyCost: 5
   SizeOfInteractableArea: 1
-  canHitNodesOfType: 04000000
+  canHitNodesOfType: 0100000002000000

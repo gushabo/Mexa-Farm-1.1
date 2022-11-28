@@ -15,7 +15,7 @@ public class ItemContainerInteractController : MonoBehaviour
     //the max distance of interaction
     [SerializeField] float maxDistance = 0.5f;
     //the upgrade of the chest
-    public bool upgrade;
+    public static bool upgrade;
     [SerializeField] GameObject noMoney;
     [SerializeField] GameObject button;
 
