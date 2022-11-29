@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpawnedObject : MonoBehaviour
 {
     [Serializable]
+    //this is the object that are in the scene to save them with ther info
     public class SaveSpawnedObjectData
     {
         //give the objects ID and position
@@ -21,6 +22,7 @@ public class SpawnedObject : MonoBehaviour
 
     public int objId;
 
+    //in case we destroyn the object this will be in charge
     public void SpawnedObjectDestroyed()
     {
         //this gets the objects inside the gameObject of the spawner

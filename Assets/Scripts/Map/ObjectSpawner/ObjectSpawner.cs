@@ -4,118 +4,107 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
+    //size of the spawnable area
+    [SerializeField] public float spawnArea_height = 1f;
+    [SerializeField] public float spawnArea_width = 1f;
 
-    [SerializeField] public float height = 1f;
-    [SerializeField] public float width = 1f;
-
+    //the objects that are going to spawn
     [SerializeField] GameObject[] spawn;
-    [SerializeField] float probability = 0.3f;
+    //the amount of objects in the array
+    int lenght;
+    //the probability to show another object
+    [SerializeField] float prob = 0.1f;
+    //number of maximun objects that are going to spawn
     [SerializeField] int spawnCount = 1;
-    [SerializeField] public bool oneTime = false;
-    public int daysPass = 0;
-
+    //if the spawner just want to be used only one time
+    [SerializeField] bool onTime = false;
+    //the list of the object on the scene to have track of them
     List<SpawnedObject> spawnedObjects;
+    //the JSON string list where is going to save the items
     [SerializeField] JSONStringList targetSaveJSONList;
+    //index to read the lists on the json array
     [SerializeField] int idInList = -1;
-
-    [SerializeField] int objectSpawnLimit = -1;
-    int Lenght;
-
 
     private void Start()
     {
-        Lenght = spawn.Length;
-        if (oneTime == false)
+        //get in a variable the size of the array
+        lenght = spawn.Length;
+
+        if (onTime == false)
         {
-            //we need the time agent to make it appear in seconds
-            TimeAgent timeAgent = GetComponent<TimeAgent>();
-            timeAgent.onTimeTick += Spawn;
+            //get the component of the TimeAgent
+            TimeAgent time = GetComponent<TimeAgent>();
+            //get the spawn method every time tick on the game
+            time.onTimeTick += Spawn;
+            //creates a new instance of the list
             spawnedObjects = new List<SpawnedObject>();
-
+            
             LoadData();
-
         }
         else
         {
+            //use the method one time then destroy the gameObject
             Spawn();
             Destroy(gameObject);
         }
     }
 
-    public void SpawnedObjectDestroyed(SpawnedObject spawnedObject)
+    void Spawn()
     {
-        spawnedObjects.Remove(spawnedObject);
-    }
 
-    private void Update()
-    {
-        //this is to check if a days has pass or not
-        if (DayTimeController.time > 85500f)
+        //check if the probability is correct to appear another object
+        if (Random.value > prob) { return; }
+        //spawn the number of object that the variable have
+        for (int i = 0; i < spawnCount; i++)
         {
-            daysPass++;
-        }
-    }
+            //getting an ID
+            int id = Random.Range(0, lenght);
+            //spawn the object
+            GameObject go = Instantiate(spawn[id]);
+            //get the position
+            Transform t = go.transform;
 
-    public void Spawn()
-    {
-
-        //if (daysPass == 3)
-        //{
-            //this checks if it goings to appear and object or not
-
-            if (Random.value <= probability) { return; }
-            if(objectSpawnLimit <= spawnedObjects.Count && objectSpawnLimit != -1){return;} 
-
-            for (int i = 0; i < spawnCount; i++)
+            if (onTime == false)
             {
-                int id = UnityEngine.Random.Range(0, Lenght);
-                //create the game object in the scene
-                GameObject go = Instantiate(spawn[id]);
-                Transform t = go.transform;
-
-                if (oneTime == false)
-                {
-                    //this gets the component to save it to then loaded and give them an id
-                    t.SetParent(transform);
-                    //here we attached another component to can spawned and save it
-                    SpawnedObject spawnedObject = go.AddComponent<SpawnedObject>();
-                    spawnedObjects.Add(spawnedObject);
-                    spawnedObject.objId = id;
-                }
-
-                Vector3 pos = transform.position;
-                //this are the new positions of the objects that spawn randomly
-                pos.x += UnityEngine.Random.Range(-width, width);
-                pos.y += UnityEngine.Random.Range(-height, height);
-
-                t.position = pos;
-                daysPass = 0;
+                //put the instatiated object as a child of the spawner
+                t.SetParent(transform);
+                //save the created object in a variable
+                SpawnedObject spawnedObject = go.AddComponent<SpawnedObject>();
+                //add the spawn object to the list of objects
+                spawnedObjects.Add(spawnedObject);
+                //get the object an ID
+                spawnedObject.objId = id;
             }
-        //}
+
+
+            //save a new postion
+            Vector3 position = transform.position;
+            position.x += UnityEngine.Random.Range(-spawnArea_width, spawnArea_width);
+            position.y += UnityEngine.Random.Range(-spawnArea_height, spawnArea_height);
+            //give the object the new position
+            t.position = position;
+        }
+
     }
 
     public class ToSave
     {
-        //create a list to save objects
         public List<SpawnedObject.SaveSpawnedObjectData> spawnedObjectDatas;
 
-        //constructor from the class
         public ToSave()
         {
-            //charge the list again
             spawnedObjectDatas = new List<SpawnedObject.SaveSpawnedObjectData>();
         }
     }
 
-    string Read()
+    public string Read()
     {
-        //initialize the list
         ToSave toSave = new ToSave();
-        //populate the list
-        //moves through all the list to adding all the objects with their id
+
+        //reading the data of the objects
         for (int i = 0; i < spawnedObjects.Count; i++)
         {
-            //adds the objects to the list
+            //using the constructor of "SpawnedObject" to populate the array
             toSave.spawnedObjectDatas.Add(
                 new SpawnedObject.SaveSpawnedObjectData(
                     spawnedObjects[i].objId,
@@ -124,36 +113,40 @@ public class ObjectSpawner : MonoBehaviour
             );
         }
 
-        //returns a string of Json to save the items
-        return  JsonUtility.ToJson(toSave);
+        return JsonUtility.ToJson(toSave);
     }
 
     public void Load(string json)
     {
-        //checks if the string is not empty
-        if(json == "" || json =="{}" || json == null) {return;}
-
-        //change the string to a new ToSave class
+        //check if the json string is empty
+        if(json == "" || json == "{}" || json == null){ return; }
+        //creates a new class and reads the information of the json
         ToSave toLoad = JsonUtility.FromJson<ToSave>(json);
-
+        //go through all the list and instantiate all the objects on the scene
         for(int i = 0; i < toLoad.spawnedObjectDatas.Count; i++)
         {
-            //gets the spawn object with their data of the load objects
+            //saving the object on the list on a variable
             SpawnedObject.SaveSpawnedObjectData data = toLoad.spawnedObjectDatas[i];
-            //creates an object
+            //put the object in the scene
             GameObject go = Instantiate(spawn[data.objectId]);
+            //change his position
             go.transform.position = data.worldPosition;
-            //give them the parent transform
+            //set the spawner as a parent to the object
             go.transform.SetParent(transform);
-            //Add the component to a new object to add it to the list
+            //Create a new object and adding the component of the original and adding the new component
             SpawnedObject so = go.AddComponent<SpawnedObject>();
-            //add the id to the new obj
+            //give him the same id
             so.objId = data.objectId;
-            //add it to the list
+            //adding the spawn object in the list
             spawnedObjects.Add(so);
             
         }
 
+    }
+
+    internal void SpawnedObjectDestroyed(SpawnedObject spawnedObject)
+    {
+        spawnedObjects.Remove(spawnedObject);
     }
 
     private void OnDestroy()
@@ -163,36 +156,34 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SaveData()
     {
-        if(CheckJSON() == false){return;}
-
+        if(Check() == false){return;}
+        //get the array of the objects in the string
         string jsonString = Read();
+        //put the string in JSON form list
         targetSaveJSONList.SetString(jsonString, idInList);
     }
 
     private void LoadData()
     {
-        if(CheckJSON() == false){return;}
+        if(Check() == false){return;}
+        //to load the information of the object we have to establish the JSONList
         Load(targetSaveJSONList.GetString(idInList));
     }
 
-    private bool CheckJSON()
+    private bool Check()
     {
-        //checks all the errors that can happen on the JSON list
-        if (oneTime == true) { return false; }
-        if (targetSaveJSONList == null) { Debug.LogError("The target save JSON List is null"); return false; }
-        if (idInList == -1) { Debug.LogError("The ID List is empty"); return false; }
-
+        //making sure of all the posibles errors
+        if (onTime == true) { return false; }
+        if (targetSaveJSONList == null) { return false; }
+        if (idInList == -1) { return false; }
         return true;
-
     }
 
     private void OnDrawGizmos()
     {
-
-        //this is only the first area
-        //here we only draw a blue square for the editor
+        //draw a blue square that represent the spawner
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, new Vector3(width * 2, height * 2));
+        Gizmos.DrawWireCube(transform.position, new Vector3(spawnArea_width * 2, spawnArea_height * 2));
     }
 
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FarmSceneJsonStrings
   m_EditorClassIdentifier: 
   strings:
-  - '{"spawnedObjectDatas":[]}'
+  - '{"spawnedObjectDatas":[{"objectId":3,"worldPosition":{"x":11.170310020446778,"y":0.895233154296875,"z":0.00008952617645263672}}]}'
