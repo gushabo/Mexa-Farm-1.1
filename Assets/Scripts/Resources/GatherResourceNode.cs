@@ -10,7 +10,10 @@ public enum ResourceNodeType
     Tree3,
     Rock,
     Rock2,
-    Rock3
+    Rock3,
+    Bush,
+    Bush2,
+    Bush3
 
 }
 

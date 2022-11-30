@@ -6,6 +6,7 @@ public class Id_Items : MonoBehaviour
 {
     /*
         Tools:
+            Scissors: 21
             Plow: 1
             Axe: 2
             Pickaxe: 3

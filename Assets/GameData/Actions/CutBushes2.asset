@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ca6af4dbe8acf488b390958b324f26, type: 3}
-  m_Name: FarmSceneJsonStrings
+  m_Script: {fileID: 11500000, guid: 1d18a55026b4aae4b9eb8965b9cb2b7e, type: 3}
+  m_Name: CutBushes2
   m_EditorClassIdentifier: 
-  strings: []
+  energyCost: 0
+  SizeOfInteractableArea: 1
+  canHitNodesOfType: 
