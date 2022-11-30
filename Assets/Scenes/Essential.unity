@@ -368,7 +368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &30636016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -817,7 +817,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 92636703}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144945440}
+        m_TargetAssemblyTypeName: ToolsManager, Assembly-CSharp
+        m_MethodName: UpgradeAxe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &92636703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6369,7 +6381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1528354815, guid: 0a08ca5beefb4174fadc63e1709daa7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17540,7 +17552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1528354815, guid: 0a08ca5beefb4174fadc63e1709daa7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22847,7 +22859,7 @@ GameObject:
   - component: {fileID: 777370134}
   - component: {fileID: 777370133}
   m_Layer: 5
-  m_Name: AxePrice
+  m_Name: ScissorsPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23627,7 +23639,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 872782036}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144945440}
+        m_TargetAssemblyTypeName: ToolsManager, Assembly-CSharp
+        m_MethodName: UpgradePlow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &872782036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23887,7 +23911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &888059140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26845,7 +26869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8d9c4f49b145e4a88022bf928ae518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 500
+  amount: 300
   text: {fileID: 1277006925}
 --- !u!114 &1144945407
 MonoBehaviour:
@@ -26974,10 +26998,12 @@ MonoBehaviour:
   axeprice: {fileID: 642028289}
   pickaxeprice: {fileID: 112503499}
   waterprice: {fileID: 186370244}
+  scissorsprice: {fileID: 777370133}
   Renderer: {fileID: 286020029}
   Renderer1: {fileID: 1978664549}
   Renderer2: {fileID: 1734500025}
   Renderer3: {fileID: 152727732}
+  Renderer4: {fileID: 1339386297}
   x: {fileID: -1528354815, guid: 0a08ca5beefb4174fadc63e1709daa7d, type: 3}
 --- !u!1 &1149663181
 GameObject:
@@ -29204,7 +29230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1528354815, guid: 0a08ca5beefb4174fadc63e1709daa7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29934,7 +29960,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1404845832}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144945440}
+        m_TargetAssemblyTypeName: ToolsManager, Assembly-CSharp
+        m_MethodName: UpgradePickaxe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1404845832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30355,7 +30393,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1448900671}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144945440}
+        m_TargetAssemblyTypeName: ToolsManager, Assembly-CSharp
+        m_MethodName: UpgradeScissors
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1448900671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32515,7 +32565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1528354815, guid: 0a08ca5beefb4174fadc63e1709daa7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34324,7 +34374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1528354815, guid: 0a08ca5beefb4174fadc63e1709daa7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

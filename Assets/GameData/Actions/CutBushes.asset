@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d18a55026b4aae4b9eb8965b9cb2b7e, type: 3}
   m_Name: CutBushes
   m_EditorClassIdentifier: 
-  energyCost: 5
+  energyCost: 1
   SizeOfInteractableArea: 1
-  canHitNodesOfType: 04000000
+  canHitNodesOfType: 07000000

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713ee76b7235b9c48ac81b43e4c4a2ab, type: 3}
   m_Name: Scissors2
   m_EditorClassIdentifier: 
-  Name: 
-  id: 0
+  Name: Scissors2
+  id: 30
   Stackable: 0
-  Icon: {fileID: 0}
-  OnAction: {fileID: 0}
+  Icon: {fileID: -1502199784, guid: f54333932503b604db0f1399ab815c74, type: 3}
+  OnAction: {fileID: 11400000, guid: f9f45ce4d84de0e4989a22d2bddcbfd5, type: 2}
   onTileMapAction: {fileID: 0}
   onItemUsed: {fileID: 0}
   crop: {fileID: 0}
