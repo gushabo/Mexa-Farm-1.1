@@ -57,6 +57,7 @@ public class CropTile  //this will keep the info of the tiles crops in each inst
         renderer.gameObject.SetActive(false);
         damage = 0;
         harvest = true;
+        CurrWater = 0;
     }
 }
 

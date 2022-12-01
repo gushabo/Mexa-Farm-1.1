@@ -91,7 +91,13 @@ public class TilemapCropsManager : MonoBehaviour
             if (DayTimeController.days > days)
             {
 
-                
+                //when it's -1 in the current water for the drought
+                if (cropTile.CurrWater < 0)
+                {
+                    cropTile.Harvested();
+                    targetTilemap.SetTile(cropTile.position, plowed);
+                    continue;
+                }
 
                 //checks if the crop has been irrigate at least once but not all the times
                 if (cropTile.CurrWater < cropTile.crop.MaxWater && cropTile.CurrWater > 0)
