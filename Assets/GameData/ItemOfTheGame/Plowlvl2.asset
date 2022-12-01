@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Plowlvl2
   m_EditorClassIdentifier: 
   Name: Plow2
-  id: 0
+  id: 22
   Stackable: 0
   Icon: {fileID: 21300000, guid: 02f5b996a22513741b3c750403153765, type: 3}
   OnAction: {fileID: 0}
@@ -27,3 +27,5 @@ MonoBehaviour:
   priceToBuy: 10
   priceToSell: 10
   canBeSold: 1
+  Damage: 0
+  lvl: 2

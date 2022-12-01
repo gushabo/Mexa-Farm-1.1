@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Scissors2
   m_EditorClassIdentifier: 
   Name: Scissors2
-  id: 30
+  id: 25
   Stackable: 0
   Icon: {fileID: -1502199784, guid: f54333932503b604db0f1399ab815c74, type: 3}
   OnAction: {fileID: 11400000, guid: f9f45ce4d84de0e4989a22d2bddcbfd5, type: 2}
@@ -27,3 +27,5 @@ MonoBehaviour:
   priceToBuy: 10
   priceToSell: 10
   canBeSold: 1
+  Damage: 34
+  lvl: 2

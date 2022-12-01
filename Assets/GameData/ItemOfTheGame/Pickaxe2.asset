@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pickaxe2
   m_EditorClassIdentifier: 
   Name: Pickaxe2
-  id: 0
+  id: 24
   Stackable: 0
   Icon: {fileID: 21300000, guid: 14b8ccd56ca97d146bb9dff16bed8591, type: 3}
   OnAction: {fileID: 11400000, guid: 8b1c5956d2162d3498434f08619edbbf, type: 2}
@@ -27,3 +27,5 @@ MonoBehaviour:
   priceToBuy: 10
   priceToSell: 10
   canBeSold: 1
+  Damage: 34
+  lvl: 2

@@ -13,6 +13,16 @@ public class Id_Items : MonoBehaviour
             Water can: 4
             ScareCrow: 5
 
+            Plow2: 22
+            Axe2: 23
+            Pickaxe2: 24
+            Scissors2: 25
+
+            Plow3: 26
+            Axe3: 27
+            Pickaxe3: 28
+            Scissors3: 29
+
         Minerals:
             Wood: 6
             Stone: 7
@@ -38,6 +48,8 @@ public class Id_Items : MonoBehaviour
         Animals:
             Cartoon milk: 19
             Egg: 20
+            Vaca: 30
+            Gallina: 31 
 
 
     */

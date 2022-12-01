@@ -21,6 +21,8 @@ public class Item : ScriptableObject
     public int priceToBuy = 10;
     public int priceToSell = 10;
     public bool canBeSold = true;
+    public int Damage;
+    public int lvl;
 
 }    
 

@@ -250,7 +250,7 @@ TextureImporter:
         width: 46
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -258,6 +258,27 @@ TextureImporter:
       bones: []
       spriteID: 78f7080b479a6374f8e70d9c4f635c95
       internalID: 1025293448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clarisse
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 44
+        width: 45
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adfd895145986fd48a31af7530eada8a
+      internalID: 546576365
       vertices: []
       indices: 
       edges: []
@@ -279,6 +300,7 @@ TextureImporter:
       MorritaDOfertas: 1025293448
       child: 1092095870
       Don Rafa: -659951819
+      Clarisse: 546576365
       ChildCabezon: 1019193373
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -23,4 +23,9 @@ MonoBehaviour:
   iconHighlight: 0
   itemPrefab: {fileID: 0}
   maxCapacity: 5
-  capacity: 99996
+  capacity: 5
+  priceToBuy: 10
+  priceToSell: 10
+  canBeSold: 1
+  Damage: 0
+  lvl: 1

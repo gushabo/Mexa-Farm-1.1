@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    [SerializeField] GameObject panel;
-    [SerializeField] GameObject toolbarPanel;
+    [SerializeField] public GameObject panel;
+    [SerializeField] public GameObject toolbarPanel;
     [SerializeField] GameObject statusPanel;
     [SerializeField] GameObject storePanel;
 
