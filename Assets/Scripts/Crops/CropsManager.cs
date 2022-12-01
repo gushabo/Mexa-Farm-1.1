@@ -49,6 +49,7 @@ public class CropTile  //this will keep the info of the tiles crops in each inst
         }
     }
 
+    //it sets the crop as a new one
     internal void Harvested()
     {
         growStage = 0;

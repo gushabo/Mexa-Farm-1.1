@@ -32,6 +32,7 @@ public class WeatherManager : MonoBehaviour
     public static WeatherManager instance;
     public bool snow;
     public bool rain;
+    public bool drought;
 
     private void Awake()
     {
@@ -71,6 +72,7 @@ public class WeatherManager : MonoBehaviour
             {
                 RainHappens();
                 SnowHappens();
+                DroughtHappens();
                 flag = false;
                 timer = 1.5f;
             }
@@ -92,6 +94,14 @@ public class WeatherManager : MonoBehaviour
         if (currentWeatherState == WeatherStates.Rain)
         {
             rain = true;
+        }
+    }
+
+    private void DroughtHappens()
+    {
+        if(currentWeatherState == WeatherStates.Drought)
+        {
+            drought = true;
         }
     }
 

@@ -24,7 +24,7 @@ public class Watering : ToolAction
     //this to make something to the item that we are going to rest 1 to the capacity
     public override void OnItemUsed(Item usedItem, ItemContainer inventory)
     {
-        usedItem.capacity -= 1;
+        //usedItem.capacity -= 1;
     }
 
 }

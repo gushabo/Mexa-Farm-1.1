@@ -91,6 +91,8 @@ public class TilemapCropsManager : MonoBehaviour
             if (DayTimeController.days > days)
             {
 
+                
+
                 //checks if the crop has been irrigate at least once but not all the times
                 if (cropTile.CurrWater < cropTile.crop.MaxWater && cropTile.CurrWater > 0)
                 {
