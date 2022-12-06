@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScareCrow
   m_EditorClassIdentifier: 
   Name: Scarecrow
-  id: 5
+  id: 32
   Stackable: 1
   Icon: {fileID: 936105612, guid: 59df27be6b98e3a47b791cad8bdc9d26, type: 3}
   OnAction: {fileID: 0}
@@ -27,3 +27,5 @@ MonoBehaviour:
   priceToBuy: 10
   priceToSell: 10
   canBeSold: 1
+  Damage: 0
+  lvl: 0

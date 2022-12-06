@@ -50,6 +50,10 @@ public class Id_Items : MonoBehaviour
             Egg: 20
             Vaca: 30
             Gallina: 31 
+        
+        Placeble Items:
+            ScareCrow: 32
+            Fence: 33
 
 
     */

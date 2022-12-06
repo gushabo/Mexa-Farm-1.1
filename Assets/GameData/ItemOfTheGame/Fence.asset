@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 713ee76b7235b9c48ac81b43e4c4a2ab, type: 3}
-  m_Name: Watermelon
+  m_Name: Fence
   m_EditorClassIdentifier: 
-  Name: Watermelon
-  id: 18
+  Name: Fence
+  id: 33
   Stackable: 1
-  Icon: {fileID: -200053297, guid: 6b25e58037736da4f8095c310c374e3a, type: 3}
-  OnAction: {fileID: 11400000, guid: cc827dd24acf7e24b82b6ff2cc60cd95, type: 2}
-  onTileMapAction: {fileID: 0}
-  onItemUsed: {fileID: 11400000, guid: cc827dd24acf7e24b82b6ff2cc60cd95, type: 2}
+  Icon: {fileID: 1866651101, guid: 616b4a03b3155d54eadb64a32e3ec1d7, type: 3}
+  OnAction: {fileID: 0}
+  onTileMapAction: {fileID: 11400000, guid: 61c5f18bc3bef30489e9d629a294f7e0, type: 2}
+  onItemUsed: {fileID: 11400000, guid: 61c5f18bc3bef30489e9d629a294f7e0, type: 2}
   crop: {fileID: 0}
   iconHighlight: 0
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 4109110957237813235, guid: 92b69ce3a024efc4f8f52fddc5083e99, type: 3}
   maxCapacity: 0
-  capacity: 6
+  capacity: 0
   priceToBuy: 10
-  priceToSell: 20
+  priceToSell: 10
   canBeSold: 1
   Damage: 0
   lvl: 0

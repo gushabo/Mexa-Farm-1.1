@@ -16,14 +16,16 @@ MonoBehaviour:
   id: 19
   Stackable: 1
   Icon: {fileID: 21300000, guid: f016e015fc344d6408486c2fb81cc8e0, type: 3}
-  OnAction: {fileID: 0}
+  OnAction: {fileID: 11400000, guid: cc827dd24acf7e24b82b6ff2cc60cd95, type: 2}
   onTileMapAction: {fileID: 0}
-  onItemUsed: {fileID: 0}
+  onItemUsed: {fileID: 11400000, guid: cc827dd24acf7e24b82b6ff2cc60cd95, type: 2}
   crop: {fileID: 0}
   iconHighlight: 0
   itemPrefab: {fileID: 0}
   maxCapacity: 0
-  capacity: 0
+  capacity: 3
   priceToBuy: 5
   priceToSell: 5
   canBeSold: 1
+  Damage: 0
+  lvl: 0

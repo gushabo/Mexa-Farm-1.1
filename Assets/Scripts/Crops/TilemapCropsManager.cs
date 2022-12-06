@@ -9,11 +9,11 @@ using TMPro;
 public class TilemapCropsManager : MonoBehaviour
 {
     //the type of tile that we can have
-    [SerializeField] TileBase plowed;
+    [SerializeField] public TileBase plowed;
     [SerializeField] TileBase seeded;
-    [SerializeField] TileBase Dirt;
+    [SerializeField] public TileBase Dirt;
     //the tilemap we are working on
-    Tilemap targetTilemap;
+    public Tilemap targetTilemap;
     //the days that have passed
     public int days = 0;
 
@@ -21,6 +21,7 @@ public class TilemapCropsManager : MonoBehaviour
     [SerializeField] GameObject cuadrito;
     public List<detector> lista;
     public bool crowsCheck;
+    public bool snowCheck;
 
     //the container when is going to have all the crops
     [SerializeField] public CropsContainer container;
@@ -83,7 +84,6 @@ public class TilemapCropsManager : MonoBehaviour
             //this i can delete it but i'm gonna keep it
             if (cropTile.Complete)
             {
-                Debug.Log("It's completely grown");
                 continue;
             }
 
@@ -146,6 +146,7 @@ public class TilemapCropsManager : MonoBehaviour
 
         }
         crowsCheck = false;
+        snowCheck = false;
         days = DayTimeController.days;
     }
 
@@ -246,6 +247,10 @@ public class TilemapCropsManager : MonoBehaviour
         if (tile == null) { return; }
         targetTilemap.SetTile(position, seeded);
         tile.crop = toSeed;
+        if (toSeed.name == "CarrotCrop")
+        {
+            tile.isCarrot = true;
+        }
     }
 
     public void VisualizeTile(CropTile cropTile)
@@ -257,7 +262,6 @@ public class TilemapCropsManager : MonoBehaviour
             targetTilemap.SetTile(cropTile.position, Dirt);
             container.Substract(cropTile);
 
-            //aqui iba el if apa de los cuadrito magicos :D
             //checks in all the list of the detector if someone have the same position as the crops that is going to be delete it
             for (int i = 0; i < lista.Count; i++)
             {
@@ -266,7 +270,6 @@ public class TilemapCropsManager : MonoBehaviour
                 {
                     Destroy(lista[i].gameObject);
                     lista.RemoveAt(i);
-                    Debug.Log("indice:" + i);
                 }
             }
 
