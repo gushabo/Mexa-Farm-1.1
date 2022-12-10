@@ -35,11 +35,6 @@ public class CorralMenu : MonoBehaviour
         GameManager.instance.listaCorralMenu.Add(this);
     }
 
-    void Update()
-    {
-
-    }
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.transform.CompareTag("Player"))
@@ -103,19 +98,34 @@ public class CorralMenu : MonoBehaviour
 
     public void MejoraAlimentador()
     {
-        alimentoMax = 10;
+        if (GameManager.instance.player.GetComponent<Currency>().Check(50))
+        {
+            GameManager.instance.player.GetComponent<Currency>().Decrease(50);
+            alimentoMax = 15;
+            alimentador = true;
+        }
     }
 
-    public void DarProducto()
+    public void MejoraAlmacenamiento()
+    {
+        if (GameManager.instance.player.GetComponent<Currency>().Check(50))
+        {
+            GameManager.instance.player.GetComponent<Currency>().Decrease(50);
+            almacenamiento = true;
+        }
+    }
+
+    public void RecogerProducto()
     {
         if (miAnimal == 1)
         {
-            GameManager.instance.InventoryContainer.Add(item[0],recursosOtorgados);
+            GameManager.instance.InventoryContainer.Add(item[0], recursosOtorgados);
         }
         else
         {
-            GameManager.instance.InventoryContainer.Add(item[1],recursosOtorgados);
+            GameManager.instance.InventoryContainer.Add(item[1], recursosOtorgados);
         }
+        recursosOtorgados -= recursosOtorgados;
 
     }
 
@@ -130,9 +140,9 @@ public class CorralMenu : MonoBehaviour
         {
             recursosOtorgados += alimentoActual;
             alimentoActual = 0;
-            if (recursosOtorgados > 15)
+            if (recursosOtorgados > 25)
             {
-                recursosOtorgados = 15;
+                recursosOtorgados = 25;
             }
         }
 
@@ -157,7 +167,8 @@ public class CorralMenu : MonoBehaviour
             if (GameManager.instance.InventoryContainer.slots[i].item.id == id_alimento)
             {
                 RevisionDeAlimentador();
-                if(topeAlimento){return;}
+                if (topeAlimento) { return; }
+                topeAlimento = false;
                 GameManager.instance.InventoryContainer.Remove(GameManager.instance.InventoryContainer.slots[i].item);
             }
 
@@ -181,7 +192,7 @@ public class CorralMenu : MonoBehaviour
         }
         else
         {
-            if (alimentoActual >= 16)
+            if (alimentoActual > 15)
             {
                 alimentoActual = 15;
                 topeAlimento = true;

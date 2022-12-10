@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class tradingAnimals : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class tradingAnimals : MonoBehaviour
     Currency money;
     //the inventory of the player
     [SerializeField] ItemContainer inventory;
+    [SerializeField] Button btonCorral;
+    public int numCorrales = 0;
+    public int maxCorrales;
 
     private void Start()
     {
@@ -25,6 +29,22 @@ public class tradingAnimals : MonoBehaviour
         principalPanel.SetActive(true);
         gameObject.GetComponent<InventoryController>().panel.SetActive(true);
         gameObject.GetComponent<InventoryController>().toolbarPanel.SetActive(false);
+        if (gameObject.GetComponent<BuyFences>().fencesD[1] == true && gameObject.GetComponent<BuyFences>().fencesD[2] == false)
+        {
+            btonCorral.enabled = true;
+            maxCorrales = 4;
+        }
+        else
+        {
+            btonCorral.enabled = false;
+            maxCorrales = 0;
+        }
+
+        if (gameObject.GetComponent<BuyFences>().fencesD[2] == true)
+        {
+            btonCorral.enabled = true;
+            maxCorrales = 9;
+        }
     }
 
     public void CloseMenu()
@@ -40,12 +60,16 @@ public class tradingAnimals : MonoBehaviour
 
         if (money.Check(item.priceToBuy))
         {
+            if (id == 2)
+            {
+                numCorrales++;
+            }
+            if (numCorrales > maxCorrales) { numCorrales = maxCorrales; return; }
             //remove the money from the inventory
             money.Decrease(item.priceToBuy);
             //adds the item to the inventory
             inventory.Add(item);
         }
-
 
     }
 

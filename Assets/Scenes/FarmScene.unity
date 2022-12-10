@@ -8752,7 +8752,6 @@ MonoBehaviour:
   lista: []
   crowsCheck: 0
   snowCheck: 0
-  resest: 0
   container: {fileID: 11400000, guid: 27e948bfa4c658945865efd5f249519f, type: 2}
   scareCrowsList: {fileID: 11400000, guid: d001c4178de86b748a4a08fb8dfe2763, type: 2}
   cropsSpritePrefab: {fileID: 151313204680158216, guid: 91df7578b8e0561448fbfdb42bc35147, type: 3}
