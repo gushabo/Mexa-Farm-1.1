@@ -19,6 +19,8 @@ public class CorralMenu : MonoBehaviour
 
     public int miAnimal = 0;
     public int cantidadAnimales;
+    public int id_animal;
+    public bool agrega;
 
     //mejora alimentador
     public bool alimentador;
@@ -64,6 +66,33 @@ public class CorralMenu : MonoBehaviour
         {
 
             miAnimal = ID_animal;
+            if(miAnimal == 1)
+            {
+                id_animal = 31;
+            }
+            else{
+                id_animal = 30;
+            }
+            for(int i = 0; i < 10; i++)
+            {
+                if(GameManager.instance.InventoryContainer.slots[i].item == null){continue;}
+                if(GameManager.instance.InventoryContainer.slots[i].item.id == id_animal)
+                {
+                    if(id_animal == 31){
+                        GameManager.instance.InventoryContainer.Remove(item[2]);
+                    }
+                    else{
+                        GameManager.instance.InventoryContainer.Remove(item[3]);
+                    }
+                    agrega = true;
+                }
+
+            }
+
+            if(!agrega){return;}
+
+            agrega = false;
+
             cantidadAnimales++;
             alimentoMax++;
 

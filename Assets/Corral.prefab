@@ -558,6 +558,8 @@ MonoBehaviour:
   item:
   - {fileID: 11400000, guid: 5b44eab1dee358347bdda73d92bc653c, type: 2}
   - {fileID: 11400000, guid: 8cef0eafbf5bda2469d3a19c054f805b, type: 2}
+  - {fileID: 11400000, guid: bc4b825f69b0ad64fa9af653dc76ffb8, type: 2}
+  - {fileID: 11400000, guid: f8e3f50d038b2ad479ac46a547762ce7, type: 2}
   miAnimal: 0
   cantidadAnimales: 0
   alimentador: 0
