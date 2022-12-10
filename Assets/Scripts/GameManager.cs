@@ -19,4 +19,7 @@ public class GameManager : MonoBehaviour
     public PlaceableObjectsReferenceManager placeableObjects;
     public ScreenTint screenTint;
     public CrowActions crowActions;
+
+    public List<CorralMenu> listaCorralMenu;
+    
 }

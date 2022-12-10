@@ -1,4 +1,0 @@
-repository "Pruebas day n night@gushabo_3@cloud"
-  path "/"
-    br "/main"
-    co "/main"

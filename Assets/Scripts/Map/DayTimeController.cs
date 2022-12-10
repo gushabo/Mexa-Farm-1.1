@@ -73,6 +73,10 @@ public class DayTimeController : MonoBehaviour
 
         if (time > secondsInDay)
         {
+            foreach (var item in GameManager.instance.listaCorralMenu)
+            {
+                item.GenerarProducto();
+            }
             NextDay();
         }
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 73cf36ed7e5478249ae9d15eddbc6478
+guid: f94adf4e05011db4ca459f1ed8016417
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,22 +116,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vaquita
+      name: Corral
       rect:
         serializedVersion: 2
-        x: 36
-        y: 115
-        width: 360
-        height: 360
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1
+        y: 17
+        width: 47
+        height: 47
+      alignment: 9
+      pivot: {x: 0.24887286, y: 0.745668}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 320a3f3f6f0f9b642a928fd68b668c4d
-      internalID: 1414989931
+      spriteID: 116498795ba8c1b44bbaeff7862c485b
+      internalID: 1385627684
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vaquita: 1414989931
+      Corral: 1385627684
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
