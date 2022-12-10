@@ -562,6 +562,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f8e3f50d038b2ad479ac46a547762ce7, type: 2}
   miAnimal: 0
   cantidadAnimales: 0
+  id_animal: 0
+  agrega: 0
   alimentador: 0
   alimentoActual: 0
   id_alimento: 0
@@ -581,7 +583,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5851536, y: -0.5627433}
+  m_Offset: {x: 0.56749177, y: -0.86048335}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.24887286, y: 0.745668}
@@ -592,7 +594,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6197715, y: 2.5929391}
+  m_Size: {x: 3.5263948, y: 4.035834}
   m_EdgeRadius: 0
 --- !u!1 &1398218309684585373
 GameObject:

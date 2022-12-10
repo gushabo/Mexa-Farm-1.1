@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Whac a Mole.unity
     guid: 19f10007a8fbd604aba3ff670c98f514
+  - enabled: 1
+    path: Assets/Scenes/MuseumScene.unity
+    guid: 31d1f8411adb4214abf6c5ca2c6a3493
   m_configObjects: {}

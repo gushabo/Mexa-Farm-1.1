@@ -40,6 +40,8 @@ public class AnimalPart1 : MonoBehaviour
         {
             buyIt = true;
             principalPanel.SetActive(false);
+            gameObject.GetComponent<InventoryController>().panel.SetActive(false);
+            gameObject.GetComponent<InventoryController>().toolbarPanel.SetActive(true);
         }
     }
 

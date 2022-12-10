@@ -31,18 +31,18 @@ public class tradingAnimals : MonoBehaviour
         gameObject.GetComponent<InventoryController>().toolbarPanel.SetActive(false);
         if (gameObject.GetComponent<BuyFences>().fencesD[1] == true && gameObject.GetComponent<BuyFences>().fencesD[2] == false)
         {
-            btonCorral.enabled = true;
+            btonCorral.interactable = true;
             maxCorrales = 4;
         }
         else
         {
-            btonCorral.enabled = false;
+            btonCorral.interactable = false;
             maxCorrales = 0;
         }
 
         if (gameObject.GetComponent<BuyFences>().fencesD[2] == true)
         {
-            btonCorral.enabled = true;
+            btonCorral.interactable = true;
             maxCorrales = 9;
         }
     }
