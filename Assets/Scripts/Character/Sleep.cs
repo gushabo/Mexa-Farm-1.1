@@ -9,6 +9,8 @@ public class Sleep : MonoBehaviour
     DisableControls disableControls;
     Character character;
     DayTimeController dayTime;
+    [SerializeField] public CortinillaDormir cortinilla;
+    [SerializeField] Animator anim;
 
     private void Awake() {
         disableControls = GetComponent<DisableControls>();
@@ -16,7 +18,7 @@ public class Sleep : MonoBehaviour
         dayTime = GameManager.instance.timeController;
     }
 
-    internal void DoSleep()
+    public void DoSleep()
     {
         //start the coroutine that is below 
         StartCoroutine(SleepRoutine());

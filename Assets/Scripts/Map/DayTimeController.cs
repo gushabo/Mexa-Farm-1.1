@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class DayTimeController : MonoBehaviour
 {
 
-    const float secondsInDay = 86400f; // this are the seconds on one day
+    const float secondsInDay = 86400; // this are the seconds on one day
     /*
     if we check every time the spawn in the "trees" this was like a practic to know how to use the time manager
     i'm using the next lines to not check every frame insted i make like a time space when the game is going to
@@ -28,10 +28,14 @@ public class DayTimeController : MonoBehaviour
 
     [SerializeField] float morningTime = 28800f; //the time that the player is going to wake up
 
-    [SerializeField] Light2D globalLight;
+    [SerializeField] Light2D globalLight; //86,400 -14,400
     public static int days;
 
+    public bool cuentaTiempo;
+
     List<TimeAgent> agents;
+
+    private CortinillaDormir cortinilla;
 
     private void Awake()
     {
@@ -41,6 +45,8 @@ public class DayTimeController : MonoBehaviour
     private void Start()
     {
         time = startAtTime;
+        cortinilla = GameManager.instance.player.GetComponent<Sleep>().cortinilla;
+        cuentaTiempo = true;
     }
 
     public void AddTime(TimeAgent timeAgent)
@@ -66,18 +72,23 @@ public class DayTimeController : MonoBehaviour
     private void Update()
     {
 
-        time += Time.deltaTime * timeScale;
+        if(cuentaTiempo)
+        {
+            time += Time.deltaTime * timeScale;
+        }
 
         TimeValueCalcs();
         PutDayLight();
 
         if (time > secondsInDay)
         {
+            cortinilla.aparecerMensaje();
+            time = morningTime;
+            days++;
             foreach (var item in GameManager.instance.listaCorralMenu)
             {
                 item.GenerarProducto();
             }
-            NextDay();
         }
 
         TimeAgents();
@@ -86,7 +97,7 @@ public class DayTimeController : MonoBehaviour
         {
             SkipTime(hours: 4);
         }
-        //Debug.Log(time);
+        
 
     }
 
@@ -130,7 +141,7 @@ public class DayTimeController : MonoBehaviour
         return (int)(time / phaseLenght) + (int)(days * phasesInDay);
     }
 
-    private void NextDay()
+    public void NextDay()
     {
         time -= secondsInDay;
         days += 1;
