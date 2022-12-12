@@ -14,14 +14,6 @@ public class CortinillaDormir : MonoBehaviour
         dormir = GameManager.instance.player.GetComponent<Sleep>();
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            anim.Play("FadeIn");
-        }
-    }
-
     public void aparecerMensaje()
     {
         anim.Play("FadeIn");
