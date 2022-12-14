@@ -13,16 +13,19 @@ public class VerRegado : MonoBehaviour
         {
             for (int i = 0; i < manager.lista.Count; i++)
             {
-                manager.lista[i].text.text = manager.container.crops[i].CurrWater.ToString();
-                Debug.Log("agua: " + manager.container.crops[i].CurrWater);
-                manager.lista[i].UI.SetActive(true);
+                if (manager.container.crops[i].crop != null)
+                {
+                    manager.lista[i].text.text = manager.container.crops[i].CurrWater.ToString();
+                    manager.lista[i].UI.SetActive(true);
+                }
             }
         }
 
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if(other.transform.CompareTag("Player"))
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Player"))
         {
             for (int i = 0; i < manager.lista.Count; i++)
             {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -27,6 +28,9 @@ public class GameManager : MonoBehaviour
     public List<Cartelito> listaMuseo;
     public int cartelesPuestos;
 
+    public TextMeshProUGUI messageText;
+    public GameObject cuadroTexto;
+
     private void Update() {
         if(cartelesPuestos == 6)
         {
@@ -45,6 +49,12 @@ public class GameManager : MonoBehaviour
     public void CerrarPanel()
     {
         PricePanel.SetActive(false);
+    }
+
+    public void EnviarTexto(string text)
+    {
+        cuadroTexto.SetActive(true);
+        messageText.text = text;
     }
 
 }

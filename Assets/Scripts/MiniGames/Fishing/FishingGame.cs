@@ -78,6 +78,7 @@ public class FishingGame : MonoBehaviour
 
     private void Start()
     {
+
         go = GameObject.Find("MainCharacter");
         cameraPos = GameObject.Find("Main Camera");
         if (go == null) { return; }
@@ -200,6 +201,7 @@ public class FishingGame : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         go.GetComponent<DisableControls>().EnableControl();
         if(winner) {giveFish();}
+        GameManager.instance.player.GetComponent<FishGameCharacter>().startGame = false;
         SceneManager.UnloadScene(scene);
     }
 

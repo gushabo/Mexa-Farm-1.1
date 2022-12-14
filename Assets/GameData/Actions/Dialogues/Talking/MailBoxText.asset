@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: MailBoxText
   m_EditorClassIdentifier: 
   line:
-  - Buenos dias joven, me llamo Rafa pero todos me dicen Don Rafa
-  - "al lado mio como puedes ver se encuentra un buz\xF3n "
-  - en este buzon se coloca la cuota para pagarme a mi :D
-  - te estoy rentando este gran terreno que hace tiempo que no uso por eso puedes
-    ver que esta un poco descuidado
-  - tu trabajo sera expandirlo y vivir a base de lo que plantes y puedan otorgarte
-    los animales si es que llegas a tener algunos
-  - "te podras encontrar mas gente en el pueblo asi como a mi amigo Juan es un se\xF1or
-    con una gran barba, el vende las semillas de los cultivos y compra lo ya crecido"
-  - de hecho es el que esta aqui a mi lado habla con el para que tambien puedas ver
-    que te dice
-  - y por favor recuerda pagarme cada 5 dias si es que no lo haces al sexto te cobrare
-    el doble y si llegas a deberme por mas de 10 dias te expulsare de mi terreno
+  - ' Good morning young man, my name is Rafa but everyone calls me Don Rafa'
+  - next to me as you can see there is a mailbox
+  - 'The fee to pay me is placed in this mailbox: D'
+  - I am renting you this large piece of land that I have not used for a long time,
+    so you can see that it is a bit neglected
+  - Your job will be to expand it and live on what you plant and they can give you
+    the animals if you get to have some.
+  - You can find more people in the town as well as my friend Juan, he is a man with
+    a big beard, he sells the seeds of the crops and buys what has already grown
+  - In fact, he is the one who is here next to me, talk to him so that you can also
+    see what he says to you.
+  - ' And please remember to pay me every 5 days if you don''t do it on the sixth
+    I will charge you double and if you owe me for more than 10 days I will expel
+    you from my land'
   actor: {fileID: 11400000, guid: 2cc440e7d82b78d42ad4e9ffb9727588, type: 2}

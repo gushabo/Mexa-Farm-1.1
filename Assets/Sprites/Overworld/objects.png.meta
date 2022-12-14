@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -208,7 +208,7 @@ TextureImporter:
         width: 69
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,6 +216,27 @@ TextureImporter:
       bones: []
       spriteID: 4c4b628e21b9b7e4e861e704d60f49df
       internalID: -787352627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arborLvl1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 98
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6149a1482441a4a8139b13d2149835
+      internalID: -1454137251
       vertices: []
       indices: 
       edges: []
@@ -235,6 +256,7 @@ TextureImporter:
       che arbol miado: 993986115
       CurrencyMarker: -787352627
       objects_3: 691135876
+      arborLvl1: -1454137251
       objects_2: 1879886260
       objects_0: -2062246994
   spritePackingTag: 

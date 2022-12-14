@@ -3,19 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class PlaceableObjectsManager : MonoBehaviour
 {
     [SerializeField] PlaceableObjectsContainer placeableObjects;
     [SerializeField] Tilemap targetTilemap;
 
-    private void Start() {
+
+    private void Start()
+    {
         GameManager.instance.GetComponent<PlaceableObjectsReferenceManager>().placeableObjectsManager = this;
         VisualizeMap();
     }
 
-    private void OnDestroy() {
-        for(int i = 0; i < placeableObjects.placeableObjects.Count; i++)
+    private void OnDestroy()
+    {
+        for (int i = 0; i < placeableObjects.placeableObjects.Count; i++)
         {
             placeableObjects.placeableObjects[i].targetObject = null;
         }
@@ -24,7 +28,7 @@ public class PlaceableObjectsManager : MonoBehaviour
     //check all the placeable objects in the map
     private void VisualizeMap()
     {
-        for(int i = 0; i < placeableObjects.placeableObjects.Count; i ++)
+        for (int i = 0; i < placeableObjects.placeableObjects.Count; i++)
         {
             VisualizeItem(placeableObjects.placeableObjects[i]);
         }
@@ -43,7 +47,7 @@ public class PlaceableObjectsManager : MonoBehaviour
     internal void PickUp(Vector3Int gridPosition)
     {
         PlaceableObject placedObject = placeableObjects.Get(gridPosition);
-        if(placedObject == null)
+        if (placedObject == null)
         {
             return;
         }
@@ -55,15 +59,21 @@ public class PlaceableObjectsManager : MonoBehaviour
     //check if the position in the map is available
     public bool Check(Vector3Int position)
     {
-        return placeableObjects.Get(position) != null; 
+        return placeableObjects.Get(position) != null;
     }
 
     //puts the item in the mnap
     public void Place(Item item, Vector3Int positionGrid)
     {
-        if(Check(positionGrid) == true){ return;}
-        PlaceableObject placeableObject = new PlaceableObject(item, positionGrid);
-        VisualizeItem(placeableObject);
-        placeableObjects.placeableObjects.Add(placeableObject);
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "FarmScene")
+        {
+            if (Check(positionGrid) == true) { return; }
+            PlaceableObject placeableObject = new PlaceableObject(item, positionGrid);
+            VisualizeItem(placeableObject);
+            GameManager.instance.InventoryContainer.Remove(item);
+            placeableObjects.placeableObjects.Add(placeableObject);
+        }
+
     }
 }

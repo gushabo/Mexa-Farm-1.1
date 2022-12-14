@@ -31,6 +31,7 @@ public class FishGamePart1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (day < DayTimeController.days)
         {
             child.SetActive(false);

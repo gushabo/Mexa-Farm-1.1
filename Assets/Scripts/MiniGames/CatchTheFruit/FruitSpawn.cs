@@ -15,6 +15,9 @@ public class FruitSpawn : MonoBehaviour
 
     [SerializeField] private UnityEvent onWin;
 
+    public float maxRange;
+    public float minRange;
+
     //the fruit gameObject
     GameObject go;
 
@@ -23,6 +26,8 @@ public class FruitSpawn : MonoBehaviour
 
     void Start()
     {
+        maxRange = gameObject.transform.position.x + max;
+        minRange = gameObject.transform.position.x - min;
         StartCoroutine(fruit());
     }
 
@@ -30,7 +35,11 @@ public class FruitSpawn : MonoBehaviour
     {
         while (fruits < 8)
         {
-            var wanted = Random.Range(min, max);
+            var wanted = Random.Range(minRange, maxRange);
+            Debug.Log("posicion del objeto: " + gameObject.transform.position.x);
+            Debug.Log("min: " + minRange);
+            Debug.Log("max: " + maxRange);
+            Debug.Log("posicion x: " + wanted);
             var position = new Vector3(wanted, transform.position.y);
             go = Instantiate(fruitPrefabs[Random.Range(0, fruitPrefabs.Length)], position, Quaternion.identity);
             fruits++;

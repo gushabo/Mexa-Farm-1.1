@@ -13,15 +13,14 @@ MonoBehaviour:
   m_Name: BasicInstructions
   m_EditorClassIdentifier: 
   line:
-  - Hola, Bienvenido a Mexa farm
-  - Aqui tendras que plantar y criar animales para poder ganar dinero
-  - te dare algunos consejos para que te sepas que debes hacer
-  - Para empezar cada accion que realizes te quitara energia que es la barra que
-    tienes en la parte de abajo de tu pantalla
-  - En la parte superior tienes el reloj y tus monedas
-  - Para finalizar recuerda visitar el pueblo que es donde podras comprar y vender
-    tus cosas
-  - yo estare ahi para que te sientas mas comodo y recuerda que si necesitas algunas
-    semillas yo te las puedo vender y lo que obtengas de esas semillas te lo podria
-    comprar.
+  - ' Hello, Welcome to Mexa farm'
+  - ' Here you will have to plant and raise animals to earn money'
+  - ' I will give you some advice so that you know what to do'
+  - To start, each action you take will take away energy, which is the bar that you
+    have at the bottom of your screen.
+  - At the top you have the clock and your coins
+  - Finally, remember to visit the town, which is where you can buy and sell your
+    things.
+  - I will be there to make you feel more comfortable and remember that if you need
+    some seeds I can sell them to you and I can buy what you get from those seeds.
   actor: {fileID: 11400000, guid: 24da4bc8f904057469bf72e6c5642d53, type: 2}

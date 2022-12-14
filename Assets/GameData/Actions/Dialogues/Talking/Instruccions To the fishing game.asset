@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: Instruccions To the fishing game
   m_EditorClassIdentifier: 
   line:
-  - Hola, tu debes de ser el nuevo del pueblo
-  - Yo soy sebastian como lo puedes ver y me encanta pescar y mira hay justamente
-    en ese lago un pescado deberias intentar atraparlo
-  - cuando lo intentes tendra pasaras a un minijuego para atraparlo si te fijas bien
-    tendras 2 columnas
-  - la de la parte izquierda es donde tu intentaras atrapar al pescado intentando
-    mantener el pez dentro del cuadro verde que tu lo mueves dando clic al raton
-  - 'si le das clic el cuadro subira y si no lo presionas bajara, la segunda columna
-    la de la izquierda es por asi decirlo tu barra de proceso esta se ira llenando
-    conforme mantengas al pes dentro del cuadro '
-  - al llenarse por completo ganaras si pasa el tiempo y no llenas la barra perderas
-  - suerte para atraparlo :D
+  - Hello, you must be the new one in town
+  - ' I am Sebastian as you can see and I love to fish and look there is a fish right
+    in that lake you should try to catch it'
+  - when you try it you will have a minigame to catch it if you look closely you
+    will have 2 columns
+  - The one on the left is where you will try to catch the fish trying to keep the
+    fish within the green box that you move by clicking the mouse.
+  - If you click on it, the box will go up and if you don't press it, it will go
+    down, the second column on the left is, so to speak, your process bar, it will
+    fill up as you keep the weight inside the box
+  - when it is completely filled you will win if time passes and you do not fill
+    the bar you will lose
+  - good luck catching it :D
   actor: {fileID: 11400000, guid: c637e3d8c95ea884b898e19410eb110a, type: 2}

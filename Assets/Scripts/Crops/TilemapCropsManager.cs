@@ -31,6 +31,7 @@ public class TilemapCropsManager : MonoBehaviour
     //the crop whole object
     [SerializeField] GameObject cropsSpritePrefab;
 
+
     private void Start()
     {
         GameManager.instance.GetComponent<CropsManager>().cropsManager = this;
@@ -40,6 +41,7 @@ public class TilemapCropsManager : MonoBehaviour
 
     private void Update()
     {
+
 
         //this is to checks that the player can't water the plant twice in a range of 30 seconds
         foreach (var cropTile in container.crops)
@@ -224,6 +226,7 @@ public class TilemapCropsManager : MonoBehaviour
             container.crops[index].watered = true;
             container.crops[index].CurrWater += 1;
         }
+
 
     }
 

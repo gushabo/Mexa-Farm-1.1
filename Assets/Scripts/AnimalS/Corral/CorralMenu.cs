@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CorralMenu : MonoBehaviour
 {
 
-    public CorralMenu miCorral;
-    public enum animal { vaca, gallina };
+    //public CorralMenu miCorral;
     public int recursosOtorgados;
     public GameObject UI;
     public GameObject botonesMejora;
+    public GameObject CollectProducts;
+    public GameObject feedingBttn;
+    public TextMeshProUGUI feederText;
 
     public SpriteRenderer[] sprites;
     public Sprite vaca;
@@ -31,10 +34,35 @@ public class CorralMenu : MonoBehaviour
     public bool almacenamiento;
 
     public bool topeAlimento;
+    public bool yanomas;
 
     void Start()
     {
-        GameManager.instance.listaCorralMenu.Add(this);
+        
+    }
+
+    private void Update()
+    {
+
+        if (recursosOtorgados <= 0)
+        {
+            CollectProducts.SetActive(false);
+        }
+        else
+        {
+            CollectProducts.SetActive(true);
+        }
+
+        if (alimentoActual <= 0)
+        {
+            feedingBttn.SetActive(false);
+        }
+        else
+        {
+            feederText.text = "Food: " + alimentoActual.ToString();
+            feedingBttn.SetActive(true);
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -66,22 +94,25 @@ public class CorralMenu : MonoBehaviour
         {
 
             miAnimal = ID_animal;
-            if(miAnimal == 1)
+            if (miAnimal == 1)
             {
                 id_animal = 31;
             }
-            else{
+            else
+            {
                 id_animal = 30;
             }
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
-                if(GameManager.instance.InventoryContainer.slots[i].item == null){continue;}
-                if(GameManager.instance.InventoryContainer.slots[i].item.id == id_animal)
+                if (GameManager.instance.InventoryContainer.slots[i].item == null) { continue; }
+                if (GameManager.instance.InventoryContainer.slots[i].item.id == id_animal)
                 {
-                    if(id_animal == 31){
+                    if (id_animal == 31)
+                    {
                         GameManager.instance.InventoryContainer.Remove(item[2]);
                     }
-                    else{
+                    else
+                    {
                         GameManager.instance.InventoryContainer.Remove(item[3]);
                     }
                     agrega = true;
@@ -89,7 +120,7 @@ public class CorralMenu : MonoBehaviour
 
             }
 
-            if(!agrega){return;}
+            if (!agrega) { return; }
 
             agrega = false;
 
@@ -162,17 +193,35 @@ public class CorralMenu : MonoBehaviour
     {
         if (!almacenamiento)
         {
-            recursosOtorgados = alimentoActual;
-            alimentoActual = 0;
+            for (int i = 0; i < cantidadAnimales; i++)
+            {
+                if (!yanomas)
+                {
+                    alimentoActual--;
+                    recursosOtorgados++;
+                }
+                if (alimentoActual <= 0) { yanomas = true; }
+
+            }
         }
         else
         {
-            recursosOtorgados += alimentoActual;
-            alimentoActual = 0;
+            for (int i = 0; i < cantidadAnimales; i++)
+            {
+                if (!yanomas)
+                {
+                    alimentoActual--;
+                    recursosOtorgados++;
+                }
+                if (alimentoActual <= 0) { yanomas = true; }
+
+            }
+
             if (recursosOtorgados > 25)
             {
                 recursosOtorgados = 25;
             }
+
         }
 
     }

@@ -18,6 +18,7 @@ public class WhacAMoleManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI finalText;
+    public TextMeshProUGUI lifesText;
 
     //Global variables
     private HashSet<mole> currentMoles = new HashSet<mole>();
@@ -77,6 +78,7 @@ public class WhacAMoleManager : MonoBehaviour
 
     private void Update()
     {
+        lifesText.text = lifes.ToString();
         if (playing)
         {
 

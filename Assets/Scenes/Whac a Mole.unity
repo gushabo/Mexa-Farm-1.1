@@ -701,6 +701,7 @@ MonoBehaviour:
   timeText: {fileID: 2104302978}
   scoreText: {fileID: 1878199532}
   finalText: {fileID: 35777505}
+  lifesText: {fileID: 2104302978}
 --- !u!4 &976514313
 Transform:
   m_ObjectHideFlags: 0
@@ -823,7 +824,7 @@ GameObject:
   - component: {fileID: 1191739350}
   - component: {fileID: 1191739349}
   m_Layer: 5
-  m_Name: TimeHeader
+  m_Name: LivesHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,7 +870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time: '
+  m_text: Lives
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d90ce423accd2bc4b8b87c327087db9b, type: 2}
   m_sharedMaterial: {fileID: 1703362221348505591, guid: d90ce423accd2bc4b8b87c327087db9b, type: 2}
@@ -1271,7 +1272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d90ce423accd2bc4b8b87c327087db9b, type: 2}
   m_sharedMaterial: {fileID: 1703362221348505591, guid: d90ce423accd2bc4b8b87c327087db9b, type: 2}
@@ -1515,7 +1516,7 @@ GameObject:
   - component: {fileID: 2104302977}
   - component: {fileID: 2104302978}
   m_Layer: 5
-  m_Name: TimeText
+  m_Name: LivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1569,7 +1570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d90ce423accd2bc4b8b87c327087db9b, type: 2}
   m_sharedMaterial: {fileID: 1703362221348505591, guid: d90ce423accd2bc4b8b87c327087db9b, type: 2}

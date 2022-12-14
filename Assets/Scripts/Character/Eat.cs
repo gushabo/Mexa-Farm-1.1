@@ -13,7 +13,6 @@ public class Eat : ToolAction
 
     public override void OnItemUsed(Item usedItem, ItemContainer inventory)
     {
-        Debug.Log("se usa XD");
         GameManager.instance.player.GetComponent<Character>().stamina.Add(usedItem.capacity);
         inventory.Remove(usedItem);
     }
