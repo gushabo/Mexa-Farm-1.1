@@ -79,7 +79,7 @@ public class MailBox : MonoBehaviour
 
         if (daysPass > 9)
         {
-            //GameOver();
+            GameOver();
         }
 
     }

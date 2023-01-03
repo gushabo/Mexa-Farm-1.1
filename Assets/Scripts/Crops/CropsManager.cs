@@ -51,6 +51,7 @@ public class CropTile  //this will keep the info of the tiles crops in each inst
         damage = 0;
         harvest = true;
         CurrWater = 0;
+        isCarrot = false;
     }
 }
 
