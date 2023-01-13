@@ -18,6 +18,7 @@ public class CortinillaDormir : MonoBehaviour
     {
         anim.Play("FadeIn");
         go.SetActive(true);
+        GameManager.instance.player.GetComponent<Character>().FullRest(100);
         GameManager.instance.timeController.cuentaTiempo = false;
     }
 

@@ -46231,6 +46231,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1277006925}
+    - target: {fileID: 7789171541926630982, guid: 8856d348ce99765419a8ead82448b854, type: 3}
+      propertyPath: amount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7789171541926630983, guid: 8856d348ce99765419a8ead82448b854, type: 3}
       propertyPath: noObj
       value: 
