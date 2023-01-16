@@ -12,3 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a925ace053f5c4f4d8c4ab370dcd501b, type: 3}
   m_Name: PlaceablesItems
   m_EditorClassIdentifier: 
+  energyCost: 0
+  CanPlow:
+  - {fileID: 11400000, guid: f0cd3d4864338284aac4e2fc49f5daf2, type: 2}
+  - {fileID: 11400000, guid: 66e6b2f1828f6844f9a9cd5368b8b0c4, type: 2}
+  - {fileID: 11400000, guid: 6032902d76c0fdc49a658df0f286c2f6, type: 2}
+  - {fileID: 11400000, guid: 825ab2578e7f99745b39cda6f4091fc7, type: 2}
+  - {fileID: 11400000, guid: 0bba1cb382a70f945a386997d0bd0a42, type: 2}
+  - {fileID: 11400000, guid: f474a840766ce674a9ef76d334fda2c0, type: 2}
+  - {fileID: 11400000, guid: 2ec51635b345cb54d8e896456f13cf43, type: 2}
+  - {fileID: 11400000, guid: feb649251f7ae6a428169a555bb2bcbd, type: 2}
+  - {fileID: 11400000, guid: 27c34871c60b14c45bbb71020c30acc3, type: 2}

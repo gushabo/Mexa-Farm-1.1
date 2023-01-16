@@ -45,18 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6537baba6e7d8c3448eed54dd4de7b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 3.5
-  width: 3.5
+  spawnArea_height: 3
+  spawnArea_width: 3
   spawn:
   - {fileID: 3653485640117252067, guid: 97a672b21f48f2b4a9ae7d7ae2e049fb, type: 3}
   - {fileID: 8007687632057314917, guid: c9811ff14b598ee4e99bf00ee0585600, type: 3}
-  probability: 1
-  spawnCount: 10
-  oneTime: 0
-  daysPass: 0
+  - {fileID: 771889758659864022, guid: 6f6795011b8751948ac6bf695d2ee440, type: 3}
+  prob: 0.5
+  spawnCount: 1
+  onTime: 0
   targetSaveJSONList: {fileID: 11400000, guid: 5f519149a1939634780eab2a419a770b, type: 2}
   idInList: 0
-  objectSpawnLimit: -1
+  numOfItemsSpawned: 0
+  maxItemsSpawned: 3
 --- !u!114 &7590498078354038482
 MonoBehaviour:
   m_ObjectHideFlags: 0

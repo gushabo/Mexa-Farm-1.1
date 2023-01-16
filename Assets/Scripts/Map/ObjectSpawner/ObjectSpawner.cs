@@ -25,6 +25,9 @@ public class ObjectSpawner : MonoBehaviour
     //index to read the lists on the json array
     [SerializeField] int idInList = -1;
 
+    public int numOfItemsSpawned;
+    public int maxItemsSpawned = 3;
+
     private void Start()
     {
         //get in a variable the size of the array
@@ -54,6 +57,8 @@ public class ObjectSpawner : MonoBehaviour
 
         //check if the probability is correct to appear another object
         if (Random.value > prob) { return; }
+        if(numOfItemsSpawned >= maxItemsSpawned) { return; }
+        numOfItemsSpawned++;
         //spawn the number of object that the variable have
         for (int i = 0; i < spawnCount; i++)
         {

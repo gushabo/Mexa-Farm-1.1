@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Trading : MonoBehaviour
 {
@@ -16,24 +17,28 @@ public class Trading : MonoBehaviour
 
     [SerializeField] GameObject noMoney;
     [SerializeField] GameObject noObj;
+    [SerializeField] GameObject NoSpace;
 
     //this is the thing that u can buy
     Store store;
     //the money of the player
     Currency money;
 
-    public int BuysPerDay = 0;
     int days = 0;
 
     bool nono = false;
     float x = 1.5f;
 
     bool noobj = false;
+    bool nospa = false;
 
     int sellPrice;
 
     ItemStorePanel itemStorePanel;
     ItemStorePanel sellStorePanel;
+
+    public List<Button> botones;
+    public int[] ventaDiaria = new int[4];
 
     private void Awake()
     {
@@ -45,7 +50,15 @@ public class Trading : MonoBehaviour
     private void Update()
     {
         //check if the day pass to put in 0 the buys per day
-        if (days < DayTimeController.days) { BuysPerDay = 0; days = DayTimeController.days; }
+        if (days < DayTimeController.days)
+        {
+            days = DayTimeController.days;
+            for(int i=0; i < 4; i++)
+            {
+                ventaDiaria[i] = 0;
+                botones[i].interactable = true;
+            }
+        }
 
         if (nono == true)
         {
@@ -68,6 +81,17 @@ public class Trading : MonoBehaviour
             }
         }
 
+        if (nospa == true)
+        {
+            x -= Time.deltaTime;
+            if (x <= 0)
+            {
+                NoSpace.SetActive(false);
+                x = 1.5f;
+                nospa = false;
+            }
+        }
+
     }
 
     public void BeginTrading(Store store)
@@ -86,10 +110,29 @@ public class Trading : MonoBehaviour
 
     public void BuyItem(int id)
     {
+        bool freeSpace = false;
+        bool sameItem = false;
         //save the item and his price
         //gets the item that is selected of the container
         Item itemToBuy = store.storeContent.slots[id].item;
         int totalPrice = itemToBuy.priceToBuy;
+        //go through the inventory searching if we have the same item we wanna buy or if we same space in the inventory
+        for (int i = 0; i < GameManager.instance.InventoryContainer.slots.Count; i++)
+        {
+            if (GameManager.instance.InventoryContainer.slots[i].item == null)
+            {
+                freeSpace = true;
+                continue;
+            }
+            if (itemToBuy == GameManager.instance.InventoryContainer.slots[i].item)
+            {
+                sameItem = true;
+                continue;
+            }
+        }
+        //if we dont have space or the item is not the same that we have in our inventory we return
+        if (!freeSpace && !sameItem) { NoSpace.SetActive(true); nospa = true; return; }
+
         //if we had money to but the item
         if (money.Check(totalPrice) == true)
         {
@@ -132,13 +175,9 @@ public class Trading : MonoBehaviour
             if (itemToSell.id == Playerinventory.slots[i].item.id)
             {
                 index = i;
-                Debug.Log("index del inventario: " + index);
-                Debug.Log("se encontro");
             }
 
         }
-
-        Debug.Log("index: " + index);
 
         if (index != -1)
         {
@@ -150,11 +189,44 @@ public class Trading : MonoBehaviour
             Playerinventory.Remove(Playerinventory.slots[index].item);
             //Update the inventory to see that the items that the player is selling
             inventoryItemPanel.Show();
+            switch (id)
+            {
+                case 0:
+                    ventaDiaria[0]++;
+                    if(ventaDiaria[0] == 15)
+                    {
+                        botones[0].interactable = false;
+                    }
+                    break;
+                case 1:
+                    ventaDiaria[1]++;
+                    if(ventaDiaria[1] == 15)
+                    {
+                        botones[1].interactable = false;
+                    }
+                    break;
+                case 2:
+                    ventaDiaria[2]++;
+                    if(ventaDiaria[2] == 15)
+                    {
+                        botones[2].interactable = false;
+                    }
+                    break;
+                case 3:
+                    ventaDiaria[3]++;
+                    if(ventaDiaria[3] == 15)
+                    {
+                        botones[3].interactable = false;
+                    }
+                    break;
+
+                default: break;
+            }
+
 
         }
         else
         {
-            Debug.Log("no se encontro");
             noObj.SetActive(true);
             noobj = true;
         }

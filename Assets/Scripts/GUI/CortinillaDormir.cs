@@ -24,6 +24,10 @@ public class CortinillaDormir : MonoBehaviour
 
     public void CerrarMensaje()
     {
+        for(int i = 0; i < GameManager.instance.listaCorralMenu.Count; i ++)
+        {
+            GameManager.instance.listaCorralMenu[i].GenerarProducto();
+        }
         go.SetActive(false);
         anim.Play("FadeOut");
         GameManager.instance.timeController.cuentaTiempo = true;

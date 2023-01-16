@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CorralMenu : MonoBehaviour
 {
@@ -30,15 +31,18 @@ public class CorralMenu : MonoBehaviour
     public int alimentoActual;
     public int id_alimento;
     public int alimentoMax;
+    public Button alimentadorBtton;
+    public GameObject alimentadorPrice;
+
     //mejora almacenamiento
     public bool almacenamiento;
-
     public bool topeAlimento;
     public bool yanomas;
+    public Button almacenamientoBtton;
+    public GameObject almacenamientoPrice;
 
-    void Start()
-    {
-        
+    private void Start() {
+        GameManager.instance.listaCorralMenu.Add(this); //para que se guarde esta instancia en la lista de corrales dentro del gameManager
     }
 
     private void Update()
@@ -62,7 +66,6 @@ public class CorralMenu : MonoBehaviour
             feederText.text = "Food: " + alimentoActual.ToString();
             feedingBttn.SetActive(true);
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -163,6 +166,8 @@ public class CorralMenu : MonoBehaviour
             GameManager.instance.player.GetComponent<Currency>().Decrease(50);
             alimentoMax = 15;
             alimentador = true;
+            alimentadorBtton.interactable = false;
+            alimentadorPrice.SetActive(false);
         }
     }
 
@@ -172,6 +177,8 @@ public class CorralMenu : MonoBehaviour
         {
             GameManager.instance.player.GetComponent<Currency>().Decrease(50);
             almacenamiento = true;
+            almacenamientoBtton.interactable = false;
+            almacenamientoPrice.SetActive(false);
         }
     }
 
@@ -199,6 +206,7 @@ public class CorralMenu : MonoBehaviour
                 {
                     alimentoActual--;
                     recursosOtorgados++;
+                    Debug.Log("se tuvo q haber generado alimento XD");
                 }
                 if (alimentoActual <= 0) { yanomas = true; }
 

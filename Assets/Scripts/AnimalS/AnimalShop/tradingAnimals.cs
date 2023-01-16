@@ -19,9 +19,70 @@ public class tradingAnimals : MonoBehaviour
     public int numCorrales = 0;
     public int maxCorrales;
 
+    bool nono = false;
+    float x = 1.5f;
+
+    bool noobj = false;
+    bool nospa = false;
+
+    int days;
+
+    [SerializeField] GameObject noMoney;
+    [SerializeField] GameObject noObj;
+    [SerializeField] GameObject NoSpace;
+
+    public List<Button> botones;
+    public int[] ventaDiaria = new int[2];
+
     private void Start()
     {
         money = GetComponent<Currency>();
+    }
+
+    private void Update()
+    {
+        //check if the day pass to put in 0 the buys per day
+        if (days < DayTimeController.days)
+        {
+            days = DayTimeController.days;
+            for (int i = 0; i < 2; i++)
+            {
+                ventaDiaria[i] = 0;
+                botones[i].interactable = true;
+            }
+        }
+
+        if (nono == true)
+        {
+            x -= Time.deltaTime;
+            if (x <= 0)
+            {
+                noMoney.SetActive(false);
+                x = 1.5f;
+                nono = false;
+            }
+        }
+        if (noobj == true)
+        {
+            x -= Time.deltaTime;
+            if (x <= 0)
+            {
+                noObj.SetActive(false);
+                x = 1.5f;
+                noobj = false;
+            }
+        }
+
+        if (nospa == true)
+        {
+            x -= Time.deltaTime;
+            if (x <= 0)
+            {
+                NoSpace.SetActive(false);
+                x = 1.5f;
+                nospa = false;
+            }
+        }
     }
 
     public void OpenMenu()
@@ -56,7 +117,28 @@ public class tradingAnimals : MonoBehaviour
 
     public void BuyItem(int id)
     {
+
+        bool freeSpace = false;
+        bool sameItem = false;
+
         Item item = sellItems.slots[id].item;
+        //go through the inventory searching if we have the same item we wanna buy or if we same space in the inventory
+        for (int i = 0; i < GameManager.instance.InventoryContainer.slots.Count; i++)
+        {
+            if (GameManager.instance.InventoryContainer.slots[i].item == null)
+            {
+                freeSpace = true;
+                continue;
+            }
+            if (item == GameManager.instance.InventoryContainer.slots[i].item)
+            {
+                sameItem = true;
+                continue;
+            }
+        }
+
+        //if we dont have space or the item is not the same that we have in our inventory we return
+        if (!freeSpace && !sameItem) { NoSpace.SetActive(true); nospa = true; return; }
 
         if (money.Check(item.priceToBuy))
         {
@@ -69,6 +151,11 @@ public class tradingAnimals : MonoBehaviour
             money.Decrease(item.priceToBuy);
             //adds the item to the inventory
             inventory.Add(item);
+        }
+        else
+        {
+            noMoney.SetActive(true);
+            nono = true;
         }
 
     }
@@ -106,17 +193,43 @@ public class tradingAnimals : MonoBehaviour
                     inventory.Remove(inventory.slots[index].item, 6);
                     //substract the money
                     money.Add(sellPrice);
+                    ventaDiaria[1]++;
+                    if(ventaDiaria[1] == 15)
+                    {
+                        botones[1].interactable = false;
+                    }
+                }
+                else
+                {
+                    noObj.SetActive(true);
+                    noobj = true;
                 }
             }
             else
             {
-                //removes the item to the inventory
-                inventory.Remove(inventory.slots[index].item);
-                //substract the money
-                money.Add(sellPrice);
+                if (id == 0)
+                {
+                    //removes the item to the inventory
+                    inventory.Remove(inventory.slots[index].item);
+                    //substract the money
+                    money.Add(sellPrice);
+                    ventaDiaria[0]++;
+                    if(ventaDiaria[0] == 15)
+                    {
+                        botones[0].interactable = false;
+                    }
+                }
+                else
+                {
+                    noObj.SetActive(true);
+                    noobj = true;
+                }
             }
-
-
+        }
+        else
+        {
+            noObj.SetActive(true);
+            noobj = true;
         }
 
 

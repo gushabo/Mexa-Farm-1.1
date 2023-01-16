@@ -85,10 +85,6 @@ public class DayTimeController : MonoBehaviour
             cortinilla.aparecerMensaje();
             time = morningTime;
             days++;
-            foreach (var item in GameManager.instance.listaCorralMenu)
-            {
-                item.GenerarProducto();
-            }
         }
 
         TimeAgents();
