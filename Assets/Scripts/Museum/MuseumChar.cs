@@ -8,7 +8,7 @@ public class MuseumChar : MonoBehaviour
 
     public static MuseumChar instance;
 
-    public bool buyIt;
+    //public bool buyIt;
     public int numBttons;
 
     [SerializeField] GameObject panel;
@@ -35,10 +35,11 @@ public class MuseumChar : MonoBehaviour
     {
         if (numBttons == 5)
         {
-            buyIt = true;
-            panel.SetActive(false);
-            gameObject.GetComponent<InventoryController>().panel.SetActive(false);
-            gameObject.GetComponent<InventoryController>().toolbarPanel.SetActive(true);
+            CloseMenu();
+            Destroy(GameObject.Find("MuseumFences"));
+            numBttons = 0;
+            //buyIt = true;
+            
         }
     }
 
@@ -53,6 +54,7 @@ public class MuseumChar : MonoBehaviour
     {
         panel.SetActive(false);
         gameObject.GetComponent<InventoryController>().panel.SetActive(false);
+        gameObject.GetComponent<InventoryController>().statusPanel.SetActive(false);
         gameObject.GetComponent<InventoryController>().toolbarPanel.SetActive(true);
     }
 

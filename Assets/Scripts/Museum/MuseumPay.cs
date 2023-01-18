@@ -11,10 +11,10 @@ public class MuseumPay : Interactable
         part1.OpenMenu();
     }
 
-    private void Update() {
-        if(MuseumChar.instance.buyIt)
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void Update() {
+    //     if(MuseumChar.instance.buyIt)
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 }

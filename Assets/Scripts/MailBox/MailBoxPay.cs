@@ -26,33 +26,37 @@ public class MailBoxPay : Interactable
     public void Open(Character character)
     {
         MailBox mailBox = character.GetComponent<MailBox>();
-        if (mailBox == null) {return;}
+        if (mailBox == null) { return; }
         mailBox.OpenBox(transform);
     }
 
     public void Close(Character character)
     {
         MailBox mailBox = character.GetComponent<MailBox>();
-        if (mailBox == null) {return;}
+        if (mailBox == null) { return; }
         mailBox.CloseMenu();
     }
 
-    private void Update() {
+    private void Update()
+    {
 
-        if(DayTimeController.days > dayPass)
+        if (DayTimeController.days > dayPass)
         {
             dayPass = DayTimeController.days;
             dayInMail++;
         }
 
-        if(dayInMail < 2){
-            sign.GetComponent<SpriteRenderer>().color = Color.green;   
+        if (dayInMail < 2)
+        {
+            sign.GetComponent<SpriteRenderer>().color = Color.green;
         }
-        if(dayInMail < 4 && dayInMail > 1){
-            sign.GetComponent<SpriteRenderer>().color = Color.yellow;
+        if (dayInMail < 4 && dayInMail > 1)
+        {
+            sign.GetComponent<SpriteRenderer>().color = Color.red;
         }
-        if(dayInMail >= 4){
-            sign.GetComponent<SpriteRenderer>().color = Color.red;   
+        if (dayInMail >= 4)
+        {
+            sign.GetComponent<SpriteRenderer>().color = Color.black;
         }
 
     }

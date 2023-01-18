@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: SeedSign
   m_EditorClassIdentifier: 
   line:
-  - You cannot sell more than 15 items of the same type.
+  - This is my crop store check it out to see what you should buy for your farm                                                                      
+    You cannot sell more than 15 items of the same type per day.
   actor: {fileID: 11400000, guid: 34d8dbc4a0ea36441bbc708a1feefb93, type: 2}

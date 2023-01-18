@@ -6,8 +6,8 @@ public class InventoryController : MonoBehaviour
 {
     [SerializeField] public GameObject panel;
     [SerializeField] public GameObject toolbarPanel;
-    [SerializeField] GameObject statusPanel;
-    [SerializeField] GameObject storePanel;
+    [SerializeField] public GameObject statusPanel;
+    [SerializeField] public GameObject storePanel;
 
     private void Update()
     {
