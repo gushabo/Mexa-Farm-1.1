@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb19f0e529b1714a8c014253630891a, type: 3}
   m_Name: SignMimic
   m_EditorClassIdentifier: 
-  Name: MimicSign
-  portrait: {fileID: 288683297, guid: 4d753935837783a49ab7462cbd948e3f, type: 3}
+  Name: Seeds Shop
+  portrait: {fileID: -1436715956, guid: 3772014a0f57153468703d52a1707f67, type: 3}

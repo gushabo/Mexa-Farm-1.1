@@ -37,6 +37,8 @@ public class MailBox : MonoBehaviour
     //the script that help us to disable the control of the player
     DisableControls disableControls;
 
+    public GameObject mailbox;
+
     private void Awake()
     {
         money = GetComponent<Currency>();
@@ -90,6 +92,7 @@ public class MailBox : MonoBehaviour
         mail = transform;
         text.text = actualprice.ToString();
         daystext.text = "Days past: " + (daysPass + 1).ToString();
+        mailbox = GameObject.Find("MailBox");
 
     }
 
@@ -101,6 +104,8 @@ public class MailBox : MonoBehaviour
             money.Decrease(price);
             MailBoxPanel.SetActive(false);
             daysPass = 0;
+            mailbox.GetComponent<MailBoxPay>().dayInMail = 0;
+
         }
         else
         {

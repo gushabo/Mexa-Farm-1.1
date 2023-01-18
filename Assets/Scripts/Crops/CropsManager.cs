@@ -110,14 +110,14 @@ public class CropsManager : MonoBehaviour
         cropsManager.Watering(position);
     }
 
-    internal void Fertilize(Vector3Int position)
+    internal void Fertilize(Vector3Int position, Item item)
     {
         if(cropsManager == null)
         {
             Debug.LogWarning("No crops manager attached");
             return;
         }
-        cropsManager.Fertilize(position);
+        cropsManager.Fertilize(position, item);
     }
     
 }

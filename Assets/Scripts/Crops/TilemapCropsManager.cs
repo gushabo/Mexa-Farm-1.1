@@ -168,7 +168,7 @@ public class TilemapCropsManager : MonoBehaviour
         }
     }
 
-    internal void Fertilize(Vector3Int position)//this is to add the fertilize to the crops
+    internal void Fertilize(Vector3Int position, Item item)//this is to add the fertilize to the crops
     { //the way that this function works is just a copy of the watering system only change the variable that affects
 
         //the index works for not reaching o reaching certain crop for fertilize
@@ -188,6 +188,7 @@ public class TilemapCropsManager : MonoBehaviour
         }
         if (container.crops[index].dayPlanted != DayTimeController.days)
         {
+            GameManager.instance.EnviarTexto("You can't fertilize it because you're trying to do it on a different day than the day you planted it.");
             return;
         }
         else
@@ -196,6 +197,7 @@ public class TilemapCropsManager : MonoBehaviour
             if (container.crops[index].fertilize == false)
             {
                 container.crops[index].fertilize = true;
+                GameManager.instance.InventoryContainer.Remove(item);
             }
         }
 

@@ -8,6 +8,9 @@ public class MailBoxPay : Interactable
     [SerializeField] bool open;
     [SerializeField] GameObject sign;
 
+    public int dayPass = 0;
+    public int dayInMail = 0;
+
     public override void Interact(Character character)
     {
         if (open == false)
@@ -35,13 +38,20 @@ public class MailBoxPay : Interactable
     }
 
     private void Update() {
-        if(DayTimeController.days < 2){
+
+        if(DayTimeController.days > dayPass)
+        {
+            dayPass = DayTimeController.days;
+            dayInMail++;
+        }
+
+        if(dayInMail < 2){
             sign.GetComponent<SpriteRenderer>().color = Color.green;   
         }
-        if(DayTimeController.days < 4 && DayTimeController.days > 1){
-            sign.GetComponent<SpriteRenderer>().color = Color.yellow;   
+        if(dayInMail < 4 && dayInMail > 1){
+            sign.GetComponent<SpriteRenderer>().color = Color.yellow;
         }
-        if(DayTimeController.days >= 4){
+        if(dayInMail >= 4){
             sign.GetComponent<SpriteRenderer>().color = Color.red;   
         }
 

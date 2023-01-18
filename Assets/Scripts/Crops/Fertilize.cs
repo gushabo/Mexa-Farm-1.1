@@ -12,17 +12,11 @@ public class Fertilize : ToolAction
 
         if (tileMapReadController.cropsManager.Check(gridPosition))
         {
-            tileMapReadController.cropsManager.Fertilize(gridPosition);
+            tileMapReadController.cropsManager.Fertilize(gridPosition, item);
             return true;
 
         }
         return false;
-    }
-
-    //this use to go to another function to see if an item is used and be if is going to be remove
-    public override void OnItemUsed(Item usedItem, ItemContainer inventory)
-    {
-        inventory.Remove(usedItem);
     }
 
 }

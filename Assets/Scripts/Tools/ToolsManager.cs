@@ -197,6 +197,7 @@ public class ToolsManager : MonoBehaviour
                 inventory.Remove(inventory.slots[plow].item);
                 inventory.Add(tools.slots[0].item);
                 Renderer.sprite = tools.slots[5].item.Icon;
+                plowprice.text = "75";
             }
             else { Debug.Log("no tienes el dinero"); }
         }
@@ -230,6 +231,7 @@ public class ToolsManager : MonoBehaviour
                 inventory.Remove(inventory.slots[axe].item);
                 inventory.Add(tools.slots[1].item);
                 Renderer1.sprite = tools.slots[6].item.Icon;
+                axeprice.text = "75";
             }
             else { Debug.Log("no tienes el dinero"); }
         }
@@ -263,6 +265,7 @@ public class ToolsManager : MonoBehaviour
                 inventory.Remove(inventory.slots[pickaxe].item);
                 inventory.Add(tools.slots[2].item);
                 Renderer2.sprite = tools.slots[7].item.Icon;
+                pickaxeprice.text = "75";
             }
             else { Debug.Log("no tienes el dinero"); }
         }
@@ -331,6 +334,7 @@ public class ToolsManager : MonoBehaviour
                 inventory.Remove(inventory.slots[scissors].item);
                 inventory.Add(tools.slots[4].item);
                 Renderer4.sprite = tools.slots[8].item.Icon;
+                scissorsprice.text = "75";
             }
             else { Debug.Log("no tienes el dinero"); }
         }

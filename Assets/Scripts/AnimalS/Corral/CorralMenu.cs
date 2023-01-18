@@ -25,6 +25,7 @@ public class CorralMenu : MonoBehaviour
     public int cantidadAnimales;
     public int id_animal;
     public bool agrega;
+    public int recursosDeHoy;
 
     //mejora alimentador
     public bool alimentador;
@@ -37,7 +38,6 @@ public class CorralMenu : MonoBehaviour
     //mejora almacenamiento
     public bool almacenamiento;
     public bool topeAlimento;
-    public bool yanomas;
     public Button almacenamientoBtton;
     public GameObject almacenamientoPrice;
 
@@ -200,30 +200,28 @@ public class CorralMenu : MonoBehaviour
     {
         if (!almacenamiento)
         {
-            for (int i = 0; i < cantidadAnimales; i++)
+            for(int i = 0; i < alimentoActual; i++)
             {
-                if (!yanomas)
+                recursosOtorgados++;
+                if(recursosOtorgados > cantidadAnimales)
                 {
-                    alimentoActual--;
-                    recursosOtorgados++;
-                    Debug.Log("se tuvo q haber generado alimento XD");
+                    recursosOtorgados = cantidadAnimales;
                 }
-                if (alimentoActual <= 0) { yanomas = true; }
-
             }
+            alimentoActual-=recursosOtorgados;
         }
         else
         {
-            for (int i = 0; i < cantidadAnimales; i++)
-            {
-                if (!yanomas)
-                {
-                    alimentoActual--;
-                    recursosOtorgados++;
-                }
-                if (alimentoActual <= 0) { yanomas = true; }
 
+            recursosDeHoy = 0;
+
+            for(int i = 0; i < cantidadAnimales; i++)
+            {
+                recursosDeHoy++;
             }
+
+            alimentoActual -= recursosDeHoy;
+            recursosOtorgados += recursosDeHoy;
 
             if (recursosOtorgados > 25)
             {

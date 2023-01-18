@@ -6,12 +6,32 @@ public class Crafting : MonoBehaviour
 {
     [SerializeField] ItemContainer inventory;
 
+    float timer = 1.5f;
+    bool noObj;
+    [SerializeField] GameObject Sign;
+
+    private void Update() {
+        
+        if(noObj)
+        {
+            timer -= Time.deltaTime;
+            Sign.SetActive(true);
+            if(timer < 0)
+            {
+                noObj = false;
+                timer = 1.5f;
+                Sign.SetActive(false);
+            }
+        }
+    }
+
     public void Craft(CraftingRecipe recipe)
     {
         //this see if we have space in the inventory
         if(inventory.CheckFreeSpace() == false)
         {
             Debug.Log("U dont have space in the inventory");
+            noObj = true;
             return;
         }
 
@@ -21,6 +41,7 @@ public class Crafting : MonoBehaviour
             if(inventory.CheckItem(recipe.elements[i]) == false)
             {
                 Debug.Log("U dont have the items in ur inventory");
+                noObj = true;
                 return;
             }
         }
