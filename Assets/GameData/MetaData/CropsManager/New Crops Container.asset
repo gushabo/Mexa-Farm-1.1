@@ -12,4 +12,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8836dbd091ae1d44e879b72d4ea0d485, type: 3}
   m_Name: New Crops Container
   m_EditorClassIdentifier: 
-  crops: []
+  crops:
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 8, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 9, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 7, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 6, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 5, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 10, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 2, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 3, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
+  - crop: {fileID: 0}
+    growStage: 0
+    renderer: {fileID: 0}
+    damage: 0
+    position: {x: 4, y: 0, z: 0}
+    watered: 0
+    waterTime: 30
+    harvest: 0
+    fertilize: 0
+    dayPlanted: 0
+    CurrWater: 0
+    crowProtect: 0
+    rainProtect: 0
+    isCarrot: 0
